@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Class 10 CBSE Real Numbers – Interactive Practice Bank</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']], processEscapes: true },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+:root {
+  --navy:#102a63; --blue:#2563eb; --blue2:#1d4ed8; --sky:#eaf4ff; --cyan:#06b6d4;
+  --purple:#7c3aed; --green:#16a34a; --orange:#f59e0b; --red:#e11d48;
+  --ink:#172033; --muted:#64748b; --paper:#ffffff; --line:#d8e4f6; --soft:#f7fbff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{
+  margin:0;font-family:"Segoe UI",Arial,sans-serif;color:var(--ink);line-height:1.62;overflow-x:hidden;
+  background:radial-gradient(circle at top left,#dff7ff 0,transparent 32%),
+  radial-gradient(circle at top right,#f2e8ff 0,transparent 30%),linear-gradient(180deg,#f8fbff 0%,#eef7ff 100%);
+}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(90deg,rgba(37,99,235,.05) 1px,transparent 1px);background-size:28px 28px;z-index:-1}
+.page{width:100%;max-width:1380px;margin:0 auto;padding:22px 24px 22px 350px}
+.hero{
+  border-radius:28px;padding:34px;background:linear-gradient(135deg,#0f3a8a,#2563eb 55%,#06b6d4);
+  color:#fff;box-shadow:0 18px 48px rgba(37,99,235,.25);position:relative;overflow:hidden;margin-bottom:18px
+}
+.hero:after{content:"MCQ ✓ ∑ √ ÷ ×";position:absolute;right:18px;top:10px;font-size:48px;font-weight:900;opacity:.14;letter-spacing:5px;white-space:nowrap}
+.eyebrow{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:7px 13px;font-weight:800;font-size:.9rem}
+.hero h1{font-size:clamp(2rem,4.4vw,3.8rem);line-height:1;margin:16px 0 8px;letter-spacing:-1px}
+.hero h2{font-size:clamp(1.05rem,2.2vw,1.55rem);margin:0;color:#dff7ff}
+.hero p{font-size:1.03rem;max-width:900px;color:#eef7ff}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+button,.btn{border:none;border-radius:14px;padding:11px 15px;font-weight:850;cursor:pointer;text-decoration:none;display:inline-block;font-family:inherit}
+button{background:#fff;color:#123b8a}
+.btn{background:#111827;color:#fff}
+.side-nav{
+  position:fixed;left:max(18px,calc((100vw - 1380px)/2 + 24px));top:18px;width:306px;height:calc(100vh - 36px);
+  overflow-y:auto;overflow-x:hidden;background:rgba(255,255,255,.95);border:1px solid var(--line);border-radius:24px;
+  box-shadow:0 14px 35px rgba(15,23,42,.10);padding:16px;z-index:20;scrollbar-width:thin
+}
+.side-nav h3{margin:0 0 8px;color:var(--navy);font-size:1rem;display:flex;align-items:center;gap:8px}
+.side-nav h3:before{content:"☰";background:#eaf2ff;color:#2563eb;border-radius:10px;padding:3px 7px;font-size:.9rem}
+.nav-small{color:#64748b;font-size:.82rem;margin:0 0 12px;line-height:1.35}
+.nav-list{display:flex;flex-direction:column;gap:6px}
+.nav-list a{text-decoration:none;color:#26364d;background:#f7faff;border:1px solid #e3edfb;border-radius:13px;padding:9px 10px;font-weight:760;font-size:.88rem;line-height:1.25;display:block}
+.nav-list a:hover,.nav-list a.active-topic{background:#dbeafe;color:#0f2f70;border-color:#60a5fa;box-shadow:inset 4px 0 0 #2563eb}
+.nav-list a.report-link{background:#102a63;color:#fff;border-color:#102a63}
+.content-shell{min-width:0;width:100%}
+.dashboard{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:18px}
+.stat-card{background:rgba(255,255,255,.95);border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:0 9px 24px rgba(15,23,42,.06);overflow:hidden}
+.stat-card b{display:block;color:var(--navy);font-size:.9rem}
+.stat-card span{font-size:1.4rem;font-weight:900;color:#123b8a}
+.progress-wrap{background:#e8eef8;border-radius:999px;height:10px;overflow:hidden;margin-top:8px}
+.progress-bar{background:linear-gradient(90deg,#2563eb,#06b6d4);height:100%;width:0%;transition:.3s}
+.lesson-card,.quiz-section{
+  background:rgba(255,255,255,.98);border:1px solid var(--line);border-radius:24px;margin:0 0 22px;padding:26px;
+  box-shadow:0 12px 34px rgba(15,23,42,.07);overflow:hidden;scroll-margin-top:22px
+}
+.section-kicker{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:#0ea5e9;font-weight:900;margin-bottom:6px}
+h1{font-size:1.78rem;line-height:1.18;margin:0 0 16px;color:#123b8a;border-bottom:3px solid #e2eeff;padding-bottom:10px}
+h2{font-size:1.28rem;color:#7c3aed;margin:20px 0 12px;padding-left:12px;border-left:5px solid var(--orange)}
+h3{font-size:1.05rem;color:#0f766e;margin:16px 0 8px}
+p{margin:10px 0;overflow-wrap:break-word} strong{color:#123b8a}
+.badge-row{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+.badge{display:inline-flex;align-items:center;gap:6px;border-radius:999px;background:#eef6ff;border:1px solid #cde0ff;color:#123b8a;padding:7px 11px;font-weight:800;font-size:.88rem}
+.level-basic{background:#ecfdf5;border-color:#bbf7d0;color:#166534}
+.level-intermediate{background:#fff7ed;border-color:#fed7aa;color:#9a3412}
+.level-advanced{background:#f5f3ff;border-color:#ddd6fe;color:#5b21b6}
+.question-card{border:1px solid #dbe7f7;background:#fbfdff;border-radius:18px;padding:18px;margin:15px 0;box-shadow:0 7px 18px rgba(15,23,42,.04)}
+.q-head{display:flex;gap:10px;align-items:flex-start;justify-content:space-between;margin-bottom:10px}
+.q-title{font-weight:850;color:#172033}
+.q-num{background:#123b8a;color:white;border-radius:10px;padding:4px 9px;font-weight:900;font-size:.82rem;white-space:nowrap}
+.options{display:grid;gap:8px;margin-top:10px}
+.option-btn,.match-select,.fill-input{
+  width:100%;text-align:left;border:1px solid #cfe0f6;background:white;color:#172033;border-radius:13px;padding:10px 12px;font-weight:650;
+  transition:.15s;box-shadow:none
+}
+.option-btn:hover{border-color:#93c5fd;background:#eff6ff}
+.option-btn.correct{background:#ecfdf5;border-color:#22c55e;color:#166534}
+.option-btn.wrong{background:#fff1f2;border-color:#fb7185;color:#9f1239}
+.option-btn:disabled{cursor:default;opacity:.95}
+.feedback-box{display:none;margin-top:10px;border-radius:14px;padding:10px 12px;font-weight:650}
+.feedback-box.show{display:block}
+.feedback-box.correct{background:#ecfdf5;border-left:6px solid #22c55e;color:#14532d}
+.feedback-box.wrong{background:#fff1f2;border-left:6px solid #fb7185;color:#881337}
+.match-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.7fr);gap:12px;align-items:center}
+.match-select{font-family:inherit}
+.check-btn{background:#123b8a;color:#fff;margin-top:10px}
+.fill-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center}
+.fill-input{height:42px}
+.math-note{background:linear-gradient(90deg,#f0f7ff,#fff);border:1px solid #b9d5ff;border-left:7px solid var(--blue);border-radius:16px;padding:12px 14px;margin:12px 0;overflow-x:auto}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+.filter-btn{background:#eff6ff;color:#123b8a;border:1px solid #bfdbfe}
+.filter-btn.active{background:#123b8a;color:#fff}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;margin:16px 0;background:white;max-width:100%}
+table{border-collapse:collapse;width:100%;min-width:760px}
+th{background:linear-gradient(135deg,#123b8a,#2563eb);color:#fff;text-align:left;padding:11px}
+td{border-bottom:1px solid #e9eef7;padding:10px;vertical-align:top}
+tr:nth-child(even) td{background:#f8fbff}
+.reward-card{background:linear-gradient(135deg,#fff7ed,#ecfeff);border:1px solid #fed7aa;border-radius:20px;padding:18px;margin:14px 0}
+.reward-title{font-size:1.35rem;font-weight:950;color:#123b8a}
+.feedback-form{display:grid;gap:10px}
+textarea,select,input[type="text"]{font-family:inherit;border:1px solid #cfe0f6;border-radius:13px;padding:10px 12px;background:#fff;color:#172033}
+textarea{min-height:90px;resize:vertical}
+.footer{text-align:center;color:#64748b;padding:24px 8px}
+.top-link{position:fixed;right:18px;bottom:18px;background:#123b8a;color:#fff;border-radius:999px;padding:10px 14px;text-decoration:none;font-weight:900;box-shadow:0 10px 24px rgba(15,23,42,.2);z-index:10}
+@media(max-width:1050px){
+  .page{padding:14px}
+  .side-nav{position:sticky;top:8px;width:100%;height:auto;max-height:42vh;margin-bottom:16px}
+  .dashboard{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .match-grid,.fill-row{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .dashboard{grid-template-columns:1fr}
+  .lesson-card,.quiz-section{padding:18px;border-radius:18px}
+  h1{font-size:1.42rem}
+  .hero{padding:26px 20px}
+  .top-link{display:none}
+}
+@media print{
+  body{background:white;font-size:11.5pt;line-height:1.42;color:#111827}
+  body::before,.actions,.side-nav,.top-link,.filters,.check-btn,.feedback-form{display:none!important}
+  .page{padding:0!important;max-width:none!important}
+  .hero{border-radius:0;box-shadow:none;padding:18px;background:#123b8a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;margin-bottom:8px}
+  .dashboard{grid-template-columns:repeat(2,1fr);gap:8px}
+  .stat-card,.lesson-card,.quiz-section,.question-card{box-shadow:none;border:1px solid #ccd8ea;break-inside:avoid;page-break-inside:avoid;border-radius:12px;padding:12px;margin-bottom:10px}
+  h1{font-size:15.5pt} h2{font-size:13pt} h3{font-size:12pt}
+  @page{size:A4;margin:12mm}
+}
+</style>
+</head>
+<body>
+<div class="page" id="top">
+  <aside class="side-nav">
+    <h3>Practice Navigation</h3>
+    <p class="nav-small">Click any section. Left navigation stays visible while scrolling.</p>
+    <div class="nav-list">
+      <a href="#instructions">How to Use</a>
+      <a href="#mcq-section">50 MCQs</a>
+      <a href="#match-section">50 Match the Following</a>
+      <a href="#fill-section">50 Fill in the Blanks</a>
+      <a class="report-link" href="#report-section">Report Sheet</a>
+      <a href="#reward-section">Rewards</a>
+      <a href="#feedback-section">Feedback</a>
+    </div>
+  </aside>
+
+  <header class="hero">
+    <span class="eyebrow">CBSE Class 10 • Real Numbers • Interactive Practice</span>
+    <h1>Divisibility Question Bank</h1>
+    <h2>150 Questions: Basic → Intermediate → Advanced</h2>
+    <p>Includes 50 MCQs, 50 match-the-following items, and 50 fill-in-the-blanks. Answers appear after selection/checking, with final report sheet, reward mechanism, and feedback area.</p>
+    <div class="actions">
+      <button onclick="window.print()">🖨️ Print / Save PDF</button>
+      <button onclick="resetAll()">🔄 Reset Practice</button>
+      <a class="btn" href="#report-section">View Report</a>
+    </div>
+  </header>
+
+  <section class="dashboard" id="dashboard">
+    <div class="stat-card"><b>Total Score</b><span id="totalScore">0/150</span><div class="progress-wrap"><div class="progress-bar" id="totalBar"></div></div></div>
+    <div class="stat-card"><b>MCQ Score</b><span id="mcqScore">0/50</span><div class="progress-wrap"><div class="progress-bar" id="mcqBar"></div></div></div>
+    <div class="stat-card"><b>Match Score</b><span id="matchScore">0/50</span><div class="progress-wrap"><div class="progress-bar" id="matchBar"></div></div></div>
+    <div class="stat-card"><b>Fill Score</b><span id="fillScore">0/50</span><div class="progress-wrap"><div class="progress-bar" id="fillBar"></div></div></div>
+  </section>
+
+  <section class="lesson-card" id="instructions">
+    <div class="section-kicker">Student Guide</div>
+    <h1>How to Use This Page</h1>
+    <p>Answer each item. For MCQs and match-the-following, the answer appears immediately after selection. For fill-in-the-blanks, type your answer and click <strong>Check</strong>.</p>
+    <div class="badge-row">
+      <span class="badge level-basic">Basic: definitions and direct facts</span>
+      <span class="badge level-intermediate">Intermediate: CBSE problem patterns</span>
+      <span class="badge level-advanced">Advanced: proof and JEE foundation thinking</span>
+    </div>
+    <div class="math-note">Core idea: \(a\mid b\iff b=ak,\;k\in\mathbb{Z}\)</div>
+  </section>
+
+  <section class="quiz-section" id="mcq-section">
+    <div class="section-kicker">Section A</div>
+    <h1>50 MCQs</h1>
+    <div class="filters">
+      <button class="filter-btn active" onclick="filterQuestions('mcq','All', this)">All</button>
+      <button class="filter-btn" onclick="filterQuestions('mcq','Basic', this)">Basic</button>
+      <button class="filter-btn" onclick="filterQuestions('mcq','Intermediate', this)">Intermediate</button>
+      <button class="filter-btn" onclick="filterQuestions('mcq','Advanced', this)">Advanced</button>
+    </div>
+    <div id="mcqContainer"></div>
+  </section>
+
+  <section class="quiz-section" id="match-section">
+    <div class="section-kicker">Section B</div>
+    <h1>50 Match the Following</h1>
+    <div class="filters">
+      <button class="filter-btn active" onclick="filterQuestions('match','All', this)">All</button>
+      <button class="filter-btn" onclick="filterQuestions('match','Basic', this)">Basic</button>
+      <button class="filter-btn" onclick="filterQuestions('match','Intermediate', this)">Intermediate</button>
+      <button class="filter-btn" onclick="filterQuestions('match','Advanced', this)">Advanced</button>
+    </div>
+    <div id="matchContainer"></div>
+  </section>
+
+  <section class="quiz-section" id="fill-section">
+    <div class="section-kicker">Section C</div>
+    <h1>50 Fill in the Blanks</h1>
+    <div class="filters">
+      <button class="filter-btn active" onclick="filterQuestions('fill','All', this)">All</button>
+      <button class="filter-btn" onclick="filterQuestions('fill','Basic', this)">Basic</button>
+      <button class="filter-btn" onclick="filterQuestions('fill','Intermediate', this)">Intermediate</button>
+      <button class="filter-btn" onclick="filterQuestions('fill','Advanced', this)">Advanced</button>
+    </div>
+    <div id="fillContainer"></div>
+  </section>
+
+  <section class="quiz-section" id="report-section">
+    <div class="section-kicker">Final Output</div>
+    <h1>Report Sheet</h1>
+    <div class="dashboard">
+      <div class="stat-card"><b>Total Attempted</b><span id="attemptedReport">0/150</span></div>
+      <div class="stat-card"><b>Correct</b><span id="correctReport">0</span></div>
+      <div class="stat-card"><b>Percentage</b><span id="percentReport">0%</span></div>
+      <div class="stat-card"><b>Level</b><span id="levelReport">Start</span></div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Section</th><th>Correct</th><th>Total</th><th>Percentage</th><th>Suggestion</th></tr></thead>
+        <tbody id="reportTable"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="quiz-section" id="reward-section">
+    <div class="section-kicker">Motivation</div>
+    <h1>Reward Mechanism</h1>
+    <div class="reward-card">
+      <div class="reward-title" id="rewardTitle">🌱 Starter Learner</div>
+      <p id="rewardMessage">Start answering to unlock badges.</p>
+      <div class="badge-row" id="badgeBox"></div>
+    </div>
+  </section>
+
+  <section class="quiz-section" id="feedback-section">
+    <div class="section-kicker">Reflection</div>
+    <h1>Feedback and Self-Reflection</h1>
+    <div class="feedback-form">
+      <label><strong>How confident do you feel in Divisibility?</strong></label>
+      <select id="confidence">
+        <option>Choose one</option>
+        <option>Low confidence</option>
+        <option>Medium confidence</option>
+        <option>High confidence</option>
+        <option>Ready for topper-level practice</option>
+      </select>
+      <label><strong>Write one concept you understood well:</strong></label>
+      <textarea id="understood" placeholder="Example: I understood Euclid’s division lemma..."></textarea>
+      <label><strong>Write one concept you need to revise:</strong></label>
+      <textarea id="revise" placeholder="Example: I need to revise irrationality proof..."></textarea>
+      <button class="check-btn" onclick="saveFeedback()">Save Feedback</button>
+      <div id="feedbackSaved" class="feedback-box correct">Feedback saved on this page.</div>
+    </div>
+  </section>
+
+  <footer class="footer">Class 10 CBSE Real Numbers • Divisibility Interactive Practice Bank • 150 Questions</footer>
+</div>
+<a class="top-link" href="#top">↑ Top</a>
+
+<script>
+const BANK = {"mcqs": [{"q": "If \\(a \\mid b\\), then which statement is correct?", "options": ["\\(b=ak\\), where \\(k\\in\\mathbb{Z}\\)", "\\(a=bk\\), where \\(k\\in\\mathbb{Z}\\)", "\\(a+b=0\\)", "\\(a-b=1\\)"], "answer": 0, "level": "Basic", "explanation": "By definition, \\(a\\mid b\\) means \\(b=ak\\) for some integer \\(k\\)."}, {"q": "Which of the following is true?", "options": ["\\(0\\mid5\\)", "\\(5\\mid0\\)", "\\(0\\mid7\\)", "\\(0\\mid -2\\)"], "answer": 1, "level": "Basic", "explanation": "Every non-zero integer divides 0 because \\(0=a\\times0\\)."}, {"q": "What is the divisor in \\(36=4\\times9\\)?", "options": ["36", "4", "9", "40"], "answer": 1, "level": "Basic", "explanation": "In \\(36=4\\times9\\), 4 divides 36, so 4 is the divisor."}, {"q": "Which notation means ‘a does not divide b’?", "options": ["\\(a\\mid b\\)", "\\(a\\nmid b\\)", "\\(a=b\\)", "\\(a\\equiv b\\)"], "answer": 1, "level": "Basic", "explanation": "\\(a\\nmid b\\) means a does not divide b."}, {"q": "Which number divides itself?", "options": ["Only positive numbers", "Only prime numbers", "Every non-zero integer", "Only even numbers"], "answer": 2, "level": "Basic", "explanation": "For \\(a\\ne0\\), \\(a=a\\times1\\), so \\(a\\mid a\\)."}, {"q": "Which is true for \\(-4\\mid20\\)?", "options": ["False, because divisor is negative", "True, because \\(20=-4\\times(-5)\\)", "False, because quotient is negative", "True only if remainder is 1"], "answer": 1, "level": "Basic", "explanation": "Negative divisors are allowed; the quotient \\(-5\\) is an integer."}, {"q": "If \\(a\\mid b\\), then \\(-a\\mid b\\) is:", "options": ["Always false", "Always true", "True only for odd \\(a\\)", "True only for positive \\(b\\)"], "answer": 1, "level": "Basic", "explanation": "If \\(b=ak\\), then \\(b=(-a)(-k)\\)."}, {"q": "Which is a factor of 42?", "options": ["5", "6", "8", "10"], "answer": 1, "level": "Basic", "explanation": "\\(42=6\\times7\\), so 6 is a factor of 42."}, {"q": "A number is divisible by another number if the remainder is:", "options": ["1", "2", "0", "negative"], "answer": 2, "level": "Basic", "explanation": "Exact divisibility means remainder 0."}, {"q": "Which statement is false?", "options": ["\\(1\\mid100\\)", "\\(9\\mid9\\)", "\\(0\\mid25\\)", "\\(12\\mid0\\)"], "answer": 2, "level": "Basic", "explanation": "Zero cannot divide a non-zero integer."}, {"q": "Euclid’s division lemma is written as:", "options": ["\\(a=bq+r,\\;0\\le r<b\\)", "\\(a+b=q+r\\)", "\\(ab=q+r\\)", "\\(a=rq+b\\)"], "answer": 0, "level": "Intermediate", "explanation": "Euclid’s lemma states \\(a=bq+r\\), where \\(0\\le r<b\\)."}, {"q": "In \\(43=6\\times7+1\\), the remainder is:", "options": ["43", "6", "7", "1"], "answer": 3, "level": "Basic", "explanation": "The remainder is the number after the plus sign, 1."}, {"q": "If \\(r=0\\) in \\(a=bq+r\\), then:", "options": ["\\(b\\nmid a\\)", "\\(b\\mid a\\)", "\\(a=0\\)", "\\(q=0\\)"], "answer": 1, "level": "Intermediate", "explanation": "Remainder 0 means \\(a=bq\\), so \\(b\\mid a\\)."}, {"q": "The HCF of two numbers is the:", "options": ["smallest multiple", "greatest common divisor", "sum of numbers", "product of primes only"], "answer": 1, "level": "Basic", "explanation": "HCF means highest common factor."}, {"q": "The LCM of two numbers is the:", "options": ["least common multiple", "largest common factor", "difference", "quotient"], "answer": 0, "level": "Basic", "explanation": "LCM means least common multiple."}, {"q": "HCF of 24 and 36 is:", "options": ["6", "8", "12", "18"], "answer": 2, "level": "Basic", "explanation": "Common factors include 1,2,3,4,6,12; greatest is 12."}, {"q": "Using Euclid’s algorithm, \\(225=135\\times1+90\\), next step is:", "options": ["\\(90=225\\times2+45\\)", "\\(135=90\\times1+45\\)", "\\(225=90\\times2+45\\)", "\\(135=45\\times3+0\\)"], "answer": 1, "level": "Intermediate", "explanation": "Next divide 135 by 90: \\(135=90\\times1+45\\)."}, {"q": "The HCF of 225 and 135 is:", "options": ["15", "30", "45", "90"], "answer": 2, "level": "Intermediate", "explanation": "Euclid algorithm ends with \\(90=45\\times2+0\\), so HCF is 45."}, {"q": "Fundamental Theorem of Arithmetic says every composite number has:", "options": ["unique prime factorisation", "two factors only", "no factor", "only odd factors"], "answer": 0, "level": "Intermediate", "explanation": "Every composite number can be expressed uniquely as a product of primes, except order."}, {"q": "Prime factorisation of 180 is:", "options": ["\\(2\\times3\\times5\\)", "\\(2^2\\times3^2\\times5\\)", "\\(2^3\\times3\\times5\\)", "\\(3^2\\times5^2\\)"], "answer": 1, "level": "Intermediate", "explanation": "\\(180=18\\times10=2^2\\times3^2\\times5\\)."}, {"q": "To find HCF using prime factorisation, take:", "options": ["highest powers of all primes", "lowest powers of common primes", "sum of powers", "product of all numbers"], "answer": 1, "level": "Intermediate", "explanation": "HCF uses common primes with minimum powers."}, {"q": "To find LCM using prime factorisation, take:", "options": ["lowest powers only", "highest powers of all primes", "only common primes", "only odd primes"], "answer": 1, "level": "Intermediate", "explanation": "LCM uses all primes with maximum powers."}, {"q": "If \\(a\\times b=\\text{HCF}\\times\\text{LCM}\\), and product is 1800, HCF is 12, LCM is:", "options": ["120", "150", "180", "21600"], "answer": 1, "level": "Intermediate", "explanation": "\\(\\text{LCM}=1800/12=150\\)."}, {"q": "For \\(\\frac{p}{q}\\) in lowest form, decimal terminates if \\(q\\) has only prime factors:", "options": ["2 and 5", "3 and 7", "2 and 3", "5 and 7"], "answer": 0, "level": "Intermediate", "explanation": "A rational number terminates when denominator is of form \\(2^m5^n\\)."}, {"q": "\\(\\frac{7}{40}\\) is:", "options": ["non-terminating recurring", "terminating", "irrational", "not rational"], "answer": 1, "level": "Intermediate", "explanation": "\\(40=2^3\\times5\\), only 2 and 5."}, {"q": "\\(\\frac{5}{12}\\) is:", "options": ["terminating", "non-terminating recurring", "integer", "irrational"], "answer": 1, "level": "Intermediate", "explanation": "\\(12=2^2\\times3\\), factor 3 causes non-terminating recurring."}, {"q": "If a prime \\(p\\mid a^2\\), then:", "options": ["\\(p\\nmid a\\)", "\\(p\\mid a\\)", "\\(a=0\\) only", "\\(p=a\\)"], "answer": 1, "level": "Advanced", "explanation": "This prime divisibility property is used in irrationality proofs."}, {"q": "In proof of \\(\\sqrt2\\) irrational, \\(p^2=2q^2\\) implies:", "options": ["\\(2\\mid p^2\\)", "\\(3\\mid p\\)", "\\(q=0\\)", "\\(p=q\\)"], "answer": 0, "level": "Advanced", "explanation": "\\(p^2=2q^2\\) shows \\(p^2\\) is divisible by 2."}, {"q": "If both \\(p\\) and \\(q\\) are divisible by 2, it contradicts:", "options": ["they are integers", "they are coprime", "they are positive", "they are irrational"], "answer": 1, "level": "Advanced", "explanation": "The fraction \\(p/q\\) was assumed in lowest form, so \\(p,q\\) are coprime."}, {"q": "\\(a^2-b^2\\) factors as:", "options": ["\\((a-b)(a+b)\\)", "\\((a+b)^2\\)", "\\((a-b)^2\\)", "\\(a(a-b)\\)"], "answer": 0, "level": "Intermediate", "explanation": "Difference of squares: \\(a^2-b^2=(a-b)(a+b)\\)."}, {"q": "Therefore \\(a-b\\mid a^2-b^2\\) because:", "options": ["\\(a-b\\) is a factor", "\\(a-b=0\\)", "\\(a+b=1\\)", "\\(a,b\\) are primes"], "answer": 0, "level": "Intermediate", "explanation": "If expression contains factor \\(a-b\\), it is divisible by \\(a-b\\)."}, {"q": "\\(n^2-n\\) can be written as:", "options": ["\\(n(n+1)\\)", "\\(n(n-1)\\)", "\\((n-1)^2\\)", "\\(n^2+1\\)"], "answer": 1, "level": "Intermediate", "explanation": "\\(n^2-n=n(n-1)\\)."}, {"q": "\\(n^3-n\\) can be written as:", "options": ["\\(n(n-1)(n+1)\\)", "\\(n(n+1)^2\\)", "\\(n^3+n\\)", "\\((n-1)^3\\)"], "answer": 0, "level": "Advanced", "explanation": "\\(n^3-n=n(n^2-1)=n(n-1)(n+1)\\)."}, {"q": "\\(n^3-n\\) is always divisible by:", "options": ["2 only", "3 only", "6", "5 only"], "answer": 2, "level": "Advanced", "explanation": "It is product of three consecutive integers, divisible by 2 and 3."}, {"q": "\\(n^5-n\\) is always divisible by:", "options": ["10", "15", "30", "60"], "answer": 2, "level": "Advanced", "explanation": "It is divisible by 2, 3 and 5, hence by 30."}, {"q": "Modular arithmetic mainly studies:", "options": ["areas", "remainders", "angles", "graphs"], "answer": 1, "level": "Advanced", "explanation": "Modulo arithmetic is arithmetic of remainders."}, {"q": "\\(17\\equiv2\\pmod5\\) because:", "options": ["\\(17+2=19\\)", "\\(17-2=15\\) and \\(5\\mid15\\)", "\\(17=2\\)", "\\(5\\mid2\\)"], "answer": 1, "level": "Advanced", "explanation": "Congruence means modulus divides the difference."}, {"q": "\\(a\\mid b\\) in modular form is:", "options": ["\\(b\\equiv0\\pmod a\\)", "\\(a\\equiv0\\pmod b\\)", "\\(a+b=0\\)", "\\(ab=0\\)"], "answer": 0, "level": "Advanced", "explanation": "\\(a\\mid b\\) means b leaves remainder 0 when divided by a."}, {"q": "Remainder of \\(3^{100}\\) divided by 8 is:", "options": ["0", "1", "3", "7"], "answer": 1, "level": "Advanced", "explanation": "\\(3^2=9\\equiv1\\pmod8\\), so \\(3^{100}\\equiv1\\)."}, {"q": "Remainder of \\(2^{50}\\) divided by 7 is:", "options": ["1", "2", "4", "6"], "answer": 2, "level": "Advanced", "explanation": "\\(2^3\\equiv1\\pmod7\\), \\(50=3\\times16+2\\), remainder \\(2^2=4\\)."}, {"q": "For word problems, maximum equal length usually means:", "options": ["LCM", "HCF", "decimal expansion", "irrationality"], "answer": 1, "level": "Basic", "explanation": "Maximum equal division problems use HCF."}, {"q": "For bells ringing together again, use:", "options": ["HCF", "LCM", "factor only", "remainder only"], "answer": 1, "level": "Basic", "explanation": "Repeated events together again are solved by LCM."}, {"q": "Which is a common mistake?", "options": ["Using HCF for maximum equal division", "Reducing denominator before decimal test", "Thinking \\(a\\mid b\\) means \\(b\\mid a\\)", "Using prime factorisation"], "answer": 2, "level": "Basic", "explanation": "Divisibility is not symmetric."}, {"q": "If \\(a\\mid b\\) and \\(b\\mid c\\), then:", "options": ["\\(a\\mid c\\)", "\\(c\\mid a\\)", "\\(a=c\\)", "\\(b=0\\)"], "answer": 0, "level": "Intermediate", "explanation": "This is the transitive property of divisibility."}, {"q": "If \\(a\\mid b\\) and \\(a\\mid c\\), then \\(a\\mid\\):", "options": ["\\(b+c\\)", "\\(bc+1\\)", "\\(b/a+c\\)", "\\(a+b+c+1\\)"], "answer": 0, "level": "Intermediate", "explanation": "Linear combination property gives \\(a\\mid b+c\\)."}, {"q": "If \\(a\\mid b\\) and \\(a\\mid c\\), then \\(a\\mid mb+nc\\) where:", "options": ["\\(m,n\\in\\mathbb{Z}\\)", "\\(m,n\\) are fractions only", "\\(m,n>100\\)", "\\(m=n=0\\) only"], "answer": 0, "level": "Advanced", "explanation": "For all integers \\(m,n\\), \\(mb+nc\\) is divisible by \\(a\\)."}, {"q": "HCF of 144 and 360 is:", "options": ["36", "72", "120", "720"], "answer": 1, "level": "Intermediate", "explanation": "\\(144=2^4 3^2\\), \\(360=2^3 3^2 5\\), HCF \\(=2^3 3^2=72\\)."}, {"q": "LCM of 144 and 360 is:", "options": ["360", "720", "1440", "72"], "answer": 1, "level": "Intermediate", "explanation": "LCM uses highest powers: \\(2^4\\times3^2\\times5=720\\)."}, {"q": "The denominator \\(160=2^5\\times5\\), so \\(\\frac{29}{160}\\) is:", "options": ["terminating", "non-terminating recurring", "irrational", "undefined"], "answer": 0, "level": "Intermediate", "explanation": "Only 2 and 5 appear in denominator."}, {"q": "The expression \\(a^3-b^3\\) is divisible by:", "options": ["\\(a+b\\) always", "\\(a-b\\)", "\\(ab\\) only", "\\(a^2+b^2\\) only"], "answer": 1, "level": "Advanced", "explanation": "\\(a^3-b^3=(a-b)(a^2+ab+b^2)\\)."}], "matches": [{"left": "\\(a\\mid b\\)", "answer": "\\(b=ak,\\;k\\in\\mathbb{Z}\\)", "options": ["\\(2^3\\times3^2\\)", "\\(b=ak,\\;k\\in\\mathbb{Z}\\)", "\\(p\\mid a\\)", "\\(a^2-b^2=(a-b)(a+b)\\)"], "level": "Basic", "explanation": "Definition of divisibility."}, {"left": "\\(0\\nmid5\\)", "answer": "Zero cannot divide non-zero integers", "options": ["Zero cannot divide non-zero integers", "\\(a^2-b^2=(a-b)(a+b)\\)", "\\(72\\)", "\\(2^3\\times3^2\\times5\\)"], "level": "Basic", "explanation": "No integer multiplied by 0 gives 5."}, {"left": "\\(5\\mid0\\)", "answer": "Every non-zero integer divides zero", "options": ["Unique prime factorisation", "\\(24\\text{ cm}\\)", "\\(n(n-1)(n+1)\\)", "Every non-zero integer divides zero"], "level": "Basic", "explanation": "\\(0=5\\times0\\)."}, {"left": "Euclid’s division lemma", "answer": "\\(a=bq+r,\\;0\\le r<b\\)", "options": ["Product of three consecutive integers", "\\(36\\text{ minutes}\\)", "\\(a=bq+r,\\;0\\le r<b\\)", "Highest common factor"], "level": "Intermediate", "explanation": "Standard division form."}, {"left": "HCF", "answer": "Highest common factor", "options": ["Product of two consecutive integers", "\\(2^3\\times3^2\\)", "Highest common factor", "Remainder arithmetic"], "level": "Basic", "explanation": "HCF is the greatest common divisor."}, {"left": "LCM", "answer": "Least common multiple", "options": ["\\(24\\text{ cm}\\)", "Least common multiple", "\\(4\\)", "\\(n(n-1)(n+1)\\)"], "level": "Basic", "explanation": "LCM is the smallest common multiple."}, {"left": "Fundamental Theorem of Arithmetic", "answer": "Unique prime factorisation", "options": ["Least common multiple", "Unique prime factorisation", "Every non-zero integer divides zero", "\\(36\\text{ minutes}\\)"], "level": "Intermediate", "explanation": "Composite numbers have unique prime factorisation."}, {"left": "Terminating decimal condition", "answer": "Denominator has only 2 and 5", "options": ["Denominator has only 2 and 5", "Product of two consecutive integers", "Assume opposite and get contradiction", "\\(72\\)"], "level": "Intermediate", "explanation": "In lowest form, denominator must be \\(2^m5^n\\)."}, {"left": "Non-terminating recurring condition", "answer": "Denominator has prime factor other than 2 or 5", "options": ["\\(2^4\\times3^2\\times5\\)", "\\(1\\)", "Denominator has prime factor other than 2 or 5", "\\(a=bq+r,\\;0\\le r<b\\)"], "level": "Intermediate", "explanation": "Other prime factors cause recurring decimal."}, {"left": "Irrationality proof style", "answer": "Assume opposite and get contradiction", "options": ["Product of three consecutive integers", "Assume opposite and get contradiction", "\\(18\\)"], "level": "Advanced", "explanation": "Proof by contradiction is used."}, {"left": "Modular arithmetic", "answer": "Remainder arithmetic", "options": ["\\(b=ak,\\;k\\in\\mathbb{Z}\\)", "Denominator has only 2 and 5", "Least common multiple", "Remainder arithmetic"], "level": "Advanced", "explanation": "Modulo means working with remainders."}, {"left": "\\(a^2-b^2\\)", "answer": "\\(a^2-b^2=(a-b)(a+b)\\)", "options": ["\\(2^2\\times3^2\\times5\\)", "\\(a^2-b^2=(a-b)(a+b)\\)", "Least common multiple", "Product of two consecutive integers"], "level": "Intermediate", "explanation": "Difference of squares identity."}, {"left": "\\(n^3-n\\)", "answer": "\\(n(n-1)(n+1)\\)", "options": ["\\(4\\)", "Unique prime factorisation", "\\(720\\)", "\\(n(n-1)(n+1)\\)"], "level": "Advanced", "explanation": "Factorisation gives three consecutive integers."}, {"left": "\\(n^2-n\\)", "answer": "Product of two consecutive integers", "options": ["Product of two consecutive integers", "Every non-zero integer divides zero", "\\(2^2\\times3^2\\times5\\)", "\\(2^3\\times3^2\\times5\\)"], "level": "Intermediate", "explanation": "\\(n^2-n=n(n-1)\\)."}, {"left": "\\(n(n+1)(n+2)\\)", "answer": "Product of three consecutive integers", "options": ["\\(720\\)", "Product of three consecutive integers", "\\(0.175\\)", "\\(0.41666\\ldots\\)"], "level": "Intermediate", "explanation": "This product is divisible by 6."}, {"left": "Prime factorisation of 72", "answer": "\\(2^3\\times3^2\\)", "options": ["\\(2^3\\times3^2\\)", "\\(2\\mid p\\)", "Denominator has only 2 and 5", "Remainder arithmetic"], "level": "Intermediate", "explanation": "\\(72=8\\times9=2^3\\times3^2\\)."}, {"left": "LCM factors for 144 and 360", "answer": "\\(2^4\\times3^2\\times5\\)", "options": ["\\(2^4\\times3^2\\times5\\)", "\\(b=ak,\\;k\\in\\mathbb{Z}\\)", "Unique prime factorisation", "Product of two consecutive integers"], "level": "Intermediate", "explanation": "LCM takes highest powers."}, {"left": "Prime factorisation of 360", "answer": "\\(2^3\\times3^2\\times5\\)", "options": ["Remainder arithmetic", "\\(a-b\\mid a^n-b^n\\)", "\\(2^3\\times3^2\\times5\\)", "\\(a^2-b^2=(a-b)(a+b)\\)"], "level": "Intermediate", "explanation": "\\(360=36\\times10\\)."}, {"left": "Prime factorisation of 180", "answer": "\\(2^2\\times3^2\\times5\\)", "options": ["\\(a=bq+r,\\;0\\le r<b\\)", "\\(720\\)", "\\(2^2\\times3^2\\times5\\)", "Remainder arithmetic"], "level": "Intermediate", "explanation": "\\(180=18\\times10\\)."}, {"left": "HCF of 225 and 135", "answer": "\\(45\\)", "options": ["Product of two consecutive integers", "\\(72\\)", "Product of three consecutive integers", "\\(45\\)"], "level": "Intermediate", "explanation": "Euclid algorithm gives 45."}, {"left": "HCF of 252 and 198", "answer": "\\(18\\)", "options": ["\\(n(n-1)(n+1)\\)", "\\(p\\mid a\\)", "\\(18\\)", "Least common multiple"], "level": "Intermediate", "explanation": "Euclid algorithm gives 18."}, {"left": "HCF of 144 and 360", "answer": "\\(72\\)", "options": ["\\(a^2-b^2=(a-b)(a+b)\\)", "\\(72\\)", "Assume opposite and get contradiction"], "level": "Intermediate", "explanation": "Take lowest common powers."}, {"left": "LCM of 144 and 360", "answer": "\\(720\\)", "options": ["Remainder arithmetic", "\\(720\\)", "Denominator has prime factor other than 2 or 5", "\\(b=ak,\\;k\\in\\mathbb{Z}\\)"], "level": "Intermediate", "explanation": "Take highest powers."}, {"left": "LCM when product is 1800 and HCF is 12", "answer": "\\(150\\)", "options": ["Denominator has only 2 and 5", "\\(1\\)", "\\(150\\)", "\\(720\\)"], "level": "Intermediate", "explanation": "\\(1800/12=150\\)."}, {"left": "Maximum rope piece from 96 cm and 120 cm", "answer": "\\(24\\text{ cm}\\)", "options": ["\\(2^3\\times3^2\\times5\\)", "Zero cannot divide non-zero integers", "\\(150\\)", "\\(24\\text{ cm}\\)"], "level": "Intermediate", "explanation": "Use HCF."}, {"left": "Bells at 12 min and 18 min ring together after", "answer": "\\(36\\text{ minutes}\\)", "options": ["Product of three consecutive integers", "\\(45\\)", "\\(720\\)", "\\(36\\text{ minutes}\\)"], "level": "Intermediate", "explanation": "Use LCM."}, {"left": "\\(\\frac{7}{40}\\)", "answer": "\\(0.175\\)", "options": ["\\(n(n-1)(n+1)\\)", "\\(0.175\\)", "\\(2\\mid p\\)", "\\(36\\text{ minutes}\\)"], "level": "Intermediate", "explanation": "Terminating decimal."}, {"left": "\\(\\frac{5}{12}\\)", "answer": "\\(0.41666\\ldots\\)", "options": ["\\(2\\mid p\\)", "\\(45\\)", "Assume opposite and get contradiction", "\\(0.41666\\ldots\\)"], "level": "Intermediate", "explanation": "Non-terminating recurring decimal."}, {"left": "If prime \\(p\\mid a^2\\)", "answer": "\\(p\\mid a\\)", "options": ["\\(2^3\\times3^2\\)", "Denominator has prime factor other than 2 or 5", "\\(p\\mid a\\)", "\\(720\\)"], "level": "Advanced", "explanation": "Prime divisibility lemma."}, {"left": "From \\(p^2=2q^2\\)", "answer": "\\(2\\mid p\\)", "options": ["\\(2^2\\times3^2\\times5\\)", "\\(2\\mid p\\)", "\\(3\\mid p\\)", "\\(4\\)"], "level": "Advanced", "explanation": "First \\(2\\mid p^2\\), then \\(2\\mid p\\)."}, {"left": "From \\(p^2=3q^2\\)", "answer": "\\(3\\mid p\\)", "options": ["\\(3\\mid p\\)", "\\(1\\)", "\\(b=ak,\\;k\\in\\mathbb{Z}\\)", "\\(24\\text{ cm}\\)"], "level": "Advanced", "explanation": "First \\(3\\mid p^2\\), then \\(3\\mid p\\)."}, {"left": "For every positive integer \\(n\\)", "answer": "\\(a-b\\mid a^n-b^n\\)", "options": ["\\(b=ak,\\;k\\in\\mathbb{Z}\\)", "\\(a-b\\mid a^n-b^n\\)", "\\(2\\mid p\\)", "\\(18\\)"], "level": "Advanced", "explanation": "Difference of powers."}, {"left": "When \\(n\\) is odd", "answer": "\\(a+b\\mid a^n+b^n\\)", "options": ["\\(150\\)", "\\(24\\text{ cm}\\)", "\\(18\\)", "\\(a+b\\mid a^n+b^n\\)"], "level": "Advanced", "explanation": "Odd power sum factor."}, {"left": "Remainder of \\(3^{100}\\) divided by 8", "answer": "\\(1\\)", "options": ["\\(1\\)", "\\(2^2\\times3^2\\times5\\)", "\\(720\\)", "\\(24\\text{ cm}\\)"], "level": "Advanced", "explanation": "\\(3^2\\equiv1\\pmod8\\)."}, {"left": "Remainder of \\(2^{50}\\) divided by 7", "answer": "\\(4\\)", "options": ["Denominator has only 2 and 5", "\\(4\\)", "Remainder arithmetic", "\\(72\\)"], "level": "Advanced", "explanation": "Cycle length 3, remaining power 2."}, {"left": "\\(1\\mid a\\)", "answer": "1 divides every integer", "options": ["1 divides every integer", "Only even numbers", "LCM rule", "Prime only"], "level": "Basic", "explanation": "\\(a=1\\times a\\)."}, {"left": "\\(a\\mid a\\)", "answer": "Every non-zero integer divides itself", "options": ["Every non-zero integer divides itself", "Zero divides all", "LCM only", "Remainder 1"], "level": "Basic", "explanation": "\\(a=a\\times1\\)."}, {"left": "\\(a\\mid b,\\;b\\mid c\\Rightarrow\\)", "answer": "\\(a\\mid c\\)", "options": ["\\(a\\mid c\\)", "\\(c\\mid a\\)", "\\(a=c\\)", "\\(b=0\\)"], "level": "Intermediate", "explanation": "Transitive property."}, {"left": "Linear combination property", "answer": "\\(a\\mid mb+nc\\)", "options": ["\\(a\\mid mb+nc\\)", "\\(a=b+c\\)", "\\(a\\nmid b+c\\)", "\\(m=n\\)"], "level": "Advanced", "explanation": "If \\(a\\mid b\\) and \\(a\\mid c\\)."}, {"left": "Maximum equal groups", "answer": "HCF", "options": ["HCF", "LCM", "Remainder", "Modulo"], "level": "Basic", "explanation": "Maximum equal division uses HCF."}, {"left": "Together again problems", "answer": "LCM", "options": ["LCM", "HCF", "Difference", "Factor only"], "level": "Basic", "explanation": "Repeated events together use LCM."}, {"left": "\\(17\\equiv2\\pmod5\\)", "answer": "\\(5\\mid(17-2)\\)", "options": ["\\(5\\mid(17-2)\\)", "\\(2\\mid17\\)", "\\(17=2\\)", "\\(5+2=17\\)"], "level": "Advanced", "explanation": "Congruence means modulus divides difference."}, {"left": "\\(a\\mid b\\) in modulo form", "answer": "\\(b\\equiv0\\pmod a\\)", "options": ["\\(b\\equiv0\\pmod a\\)", "\\(a\\equiv0\\pmod b\\)", "\\(a+b=0\\)", "\\(ab=1\\)"], "level": "Advanced", "explanation": "Divisible means remainder 0."}, {"left": "\\(a^3-b^3\\)", "answer": "\\((a-b)(a^2+ab+b^2)\\)", "options": ["\\((a-b)(a^2+ab+b^2)\\)", "\\((a+b)^3\\)", "\\(a^2-b^2\\)", "\\(ab(a-b)\\)"], "level": "Advanced", "explanation": "Difference of cubes."}, {"left": "\\(a^3+b^3\\)", "answer": "\\((a+b)(a^2-ab+b^2)\\)", "options": ["\\((a+b)(a^2-ab+b^2)\\)", "\\((a-b)^3\\)", "\\(a^3-b^3\\)", "\\(ab(a+b)\\)"], "level": "Advanced", "explanation": "Sum of cubes."}, {"left": "\\(n^5-n\\)", "answer": "Divisible by 30", "options": ["Divisible by 30", "Divisible by 4 only", "Always prime", "Never even"], "level": "Advanced", "explanation": "Divisible by 2,3,5."}, {"left": "\\(q=2^m5^n\\)", "answer": "Terminating decimal", "options": ["Terminating decimal", "Irrational number", "No decimal", "Prime number"], "level": "Intermediate", "explanation": "Terminating decimal condition."}, {"left": "\\(q\\ne2^m5^n\\)", "answer": "Non-terminating recurring decimal", "options": ["Non-terminating recurring decimal", "Always terminating", "Not rational", "Zero"], "level": "Intermediate", "explanation": "If other prime factor exists."}, {"left": "Prime factor powers for HCF", "answer": "Minimum powers", "options": ["Minimum powers", "Maximum powers", "Add powers", "Ignore powers"], "level": "Intermediate", "explanation": "HCF uses minimum powers."}, {"left": "Prime factor powers for LCM", "answer": "Maximum powers", "options": ["Maximum powers", "Minimum powers", "Subtract powers", "No powers"], "level": "Intermediate", "explanation": "LCM uses maximum powers."}], "fills": [{"q": "If \\(a\\mid b\\), then \\(b=ak\\), where \\(k\\in\\) ________.", "answer": "\\(\\mathbb{Z}\\)", "alts": ["Z", "integers", "integer", "\\(\\mathbb{Z}\\)"], "level": "Basic", "explanation": "The quotient must be an integer."}, {"q": "A number is divisible by another number if the remainder is ________.", "answer": "0", "alts": ["0", "zero"], "level": "Basic", "explanation": "Divisibility means no remainder."}, {"q": "In \\(a\\mid b\\), \\(a\\) is called the ________.", "answer": "divisor", "alts": ["divisor"], "level": "Basic", "explanation": "\\(a\\) divides \\(b\\)."}, {"q": "In \\(a\\mid b\\), \\(b\\) is called the ________.", "answer": "dividend", "alts": ["dividend"], "level": "Basic", "explanation": "\\(b\\) is the number being divided."}, {"q": "\\(0\\nmid a\\) for \\(a\\neq\\) ________.", "answer": "0", "alts": ["0", "zero"], "level": "Basic", "explanation": "Zero cannot divide any non-zero integer."}, {"q": "Every non-zero integer divides ________.", "answer": "0", "alts": ["0", "zero"], "level": "Basic", "explanation": "\\(a\\mid0\\) for \\(a\\neq0\\)."}, {"q": "\\(1\\mid a\\) means 1 divides every ________.", "answer": "integer", "alts": ["integer"], "level": "Basic", "explanation": "1 divides every integer."}, {"q": "Every non-zero integer divides ________.", "answer": "itself", "alts": ["itself"], "level": "Basic", "explanation": "\\(a=a\\times1\\)."}, {"q": "\\(-4\\mid20\\) because \\(20=-4\\times\\) ________.", "answer": "\\(-5\\)", "alts": ["-5", "\\(-5\\)"], "level": "Basic", "explanation": "The quotient is \\(-5\\)."}, {"q": "\\(6\\nmid28\\) because \\(28\\div6\\) is not an ________.", "answer": "integer", "alts": ["integer"], "level": "Basic", "explanation": "The quotient must be an integer."}, {"q": "Euclid’s division lemma is \\(a=bq+\\) ________.", "answer": "\\(r\\)", "alts": ["r", "\\(r\\)"], "level": "Intermediate", "explanation": "The remainder is \\(r\\)."}, {"q": "In \\(a=bq+r\\), \\(q\\) is the ________.", "answer": "quotient", "alts": ["quotient"], "level": "Basic", "explanation": "q represents quotient."}, {"q": "In \\(a=bq+r\\), \\(r\\) is the ________.", "answer": "remainder", "alts": ["remainder"], "level": "Basic", "explanation": "r represents remainder."}, {"q": "In Euclid’s lemma, \\(0\\le r<\\) ________.", "answer": "\\(b\\)", "alts": ["b", "\\(b\\)"], "level": "Intermediate", "explanation": "Remainder is less than divisor."}, {"q": "If \\(r=0\\) in \\(a=bq+r\\), then \\(b\\mid\\) ________.", "answer": "\\(a\\)", "alts": ["a", "\\(a\\)"], "level": "Intermediate", "explanation": "\\(a=bq\\), so \\(b\\mid a\\)."}, {"q": "The HCF means highest common ________.", "answer": "factor", "alts": ["factor"], "level": "Basic", "explanation": "HCF expands to Highest Common Factor."}, {"q": "The LCM means least common ________.", "answer": "multiple", "alts": ["multiple"], "level": "Basic", "explanation": "LCM expands to Least Common Multiple."}, {"q": "The HCF of 24 and 36 is ________.", "answer": "12", "alts": ["12"], "level": "Basic", "explanation": "Greatest common factor is 12."}, {"q": "The HCF of 225 and 135 is ________.", "answer": "45", "alts": ["45"], "level": "Intermediate", "explanation": "Euclid algorithm gives 45."}, {"q": "The HCF of 252 and 198 is ________.", "answer": "18", "alts": ["18"], "level": "Intermediate", "explanation": "Euclid algorithm gives 18."}, {"q": "Fundamental Theorem of Arithmetic gives unique ________ factorisation.", "answer": "prime", "alts": ["prime"], "level": "Intermediate", "explanation": "Every composite number has unique prime factorisation."}, {"q": "\\(180=2^2\\times3^2\\times\\) ________.", "answer": "5", "alts": ["5"], "level": "Intermediate", "explanation": "Prime factorisation includes \\(5\\)."}, {"q": "\\(360=2^3\\times3^2\\times\\) ________.", "answer": "5", "alts": ["5"], "level": "Intermediate", "explanation": "\\(360=2^3\\times3^2\\times5\\)."}, {"q": "To find HCF by prime factorisation, take the ________ powers of common primes.", "answer": "lowest", "alts": ["lowest", "minimum", "min"], "level": "Intermediate", "explanation": "HCF uses minimum powers."}, {"q": "To find LCM by prime factorisation, take the ________ powers of all primes.", "answer": "highest", "alts": ["highest", "maximum", "max"], "level": "Intermediate", "explanation": "LCM uses maximum powers."}, {"q": "HCF of 144 and 360 is ________.", "answer": "72", "alts": ["72"], "level": "Intermediate", "explanation": "\\(2^3\\times3^2=72\\)."}, {"q": "LCM of 144 and 360 is ________.", "answer": "720", "alts": ["720"], "level": "Intermediate", "explanation": "\\(2^4\\times3^2\\times5=720\\)."}, {"q": "\\(a\\times b=\\text{HCF}\\times\\) ________.", "answer": "LCM", "alts": ["LCM", "lcm", "\\(\\text{LCM}\\)"], "level": "Intermediate", "explanation": "Product formula."}, {"q": "If product is 1800 and HCF is 12, LCM is ________.", "answer": "150", "alts": ["150"], "level": "Intermediate", "explanation": "\\(1800/12=150\\)."}, {"q": "Maximum equal rope length problems generally use ________.", "answer": "HCF", "alts": ["HCF", "hcf"], "level": "Basic", "explanation": "Maximum equal division uses HCF."}, {"q": "Bells ringing together again generally use ________.", "answer": "LCM", "alts": ["LCM", "lcm"], "level": "Basic", "explanation": "Repeated events use LCM."}, {"q": "\\(\\frac{7}{40}=\\) ________.", "answer": "0.175", "alts": ["0.175"], "level": "Intermediate", "explanation": "Divide 7 by 40."}, {"q": "\\(\\frac{5}{12}=0.41666\\ldots\\) is non-terminating ________.", "answer": "recurring", "alts": ["recurring"], "level": "Intermediate", "explanation": "Digits repeat."}, {"q": "A terminating decimal has denominator of the form \\(2^m5^\\) ________.", "answer": "\\(n\\)", "alts": ["n", "\\(n\\)"], "level": "Intermediate", "explanation": "The form is \\(2^m5^n\\)."}, {"q": "If denominator has prime factor other than 2 and 5, decimal is non-terminating ________.", "answer": "recurring", "alts": ["recurring"], "level": "Intermediate", "explanation": "It is repeating."}, {"q": "If prime \\(p\\mid a^2\\), then \\(p\\mid\\) ________.", "answer": "\\(a\\)", "alts": ["a", "\\(a\\)"], "level": "Advanced", "explanation": "Prime divisibility lemma."}, {"q": "In proving \\(\\sqrt2\\) irrational, assume \\(\\sqrt2=\\frac{p}{\\_}\\).", "answer": "\\(q\\)", "alts": ["q", "\\(q\\)"], "level": "Advanced", "explanation": "Write rational as \\(p/q\\)."}, {"q": "From \\(p^2=2q^2\\), we get \\(2\\mid p^2\\), hence \\(2\\mid\\) ________.", "answer": "\\(p\\)", "alts": ["p", "\\(p\\)"], "level": "Advanced", "explanation": "Prime divisibility lemma."}, {"q": "If both \\(p\\) and \\(q\\) are divisible by 2, they are not ________.", "answer": "coprime", "alts": ["coprime"], "level": "Advanced", "explanation": "Contradiction to lowest form."}, {"q": "\\(a^2-b^2=(a-b)(\\) ________ \\().\\)", "answer": "\\(a+b\\)", "alts": ["a+b", "\\(a+b\\)"], "level": "Intermediate", "explanation": "Difference of squares."}, {"q": "\\(a^3-b^3=(a-b)(\\) ________ \\().\\)", "answer": "\\(a^2+ab+b^2\\)", "alts": ["a^2+ab+b^2", "\\(a^2+ab+b^2\\)"], "level": "Advanced", "explanation": "Difference of cubes."}, {"q": "\\(a^3+b^3=(a+b)(\\) ________ \\().\\)", "answer": "\\(a^2-ab+b^2\\)", "alts": ["a^2-ab+b^2", "\\(a^2-ab+b^2\\)"], "level": "Advanced", "explanation": "Sum of cubes."}, {"q": "\\(n^2-n=n(\\) ________ \\().\\)", "answer": "\\(n-1\\)", "alts": ["n-1", "\\(n-1\\)"], "level": "Intermediate", "explanation": "Factor out n."}, {"q": "\\(n^3-n=n(n-1)(\\) ________ \\().\\)", "answer": "\\(n+1\\)", "alts": ["n+1", "\\(n+1\\)"], "level": "Advanced", "explanation": "Difference of squares."}, {"q": "\\(n^3-n\\) is divisible by ________.", "answer": "6", "alts": ["6"], "level": "Advanced", "explanation": "Product of three consecutive integers."}, {"q": "\\(n^5-n\\) is divisible by ________.", "answer": "30", "alts": ["30"], "level": "Advanced", "explanation": "Divisible by 2, 3 and 5."}, {"q": "Modular arithmetic is arithmetic of ________.", "answer": "remainders", "alts": ["remainders"], "level": "Advanced", "explanation": "Modulo means remainder."}, {"q": "\\(17\\equiv2\\pmod5\\) because \\(5\\mid(17-\\) ________ \\().\\)", "answer": "2", "alts": ["2"], "level": "Advanced", "explanation": "\\(17-2=15\\)."}, {"q": "\\(a\\mid b\\) means \\(b\\equiv\\) ________ \\(\\pmod a\\).", "answer": "0", "alts": ["0", "zero"], "level": "Advanced", "explanation": "Divisible means remainder 0."}, {"q": "Remainder of \\(3^{100}\\) divided by 8 is ________.", "answer": "1", "alts": ["1"], "level": "Advanced", "explanation": "\\(3^2\\equiv1\\pmod8\\)."}]};
+const state = {
+  mcq: Array(BANK.mcqs.length).fill(null),
+  match: Array(BANK.matches.length).fill(null),
+  fill: Array(BANK.fills.length).fill(null)
+};
+
+function levelClass(level){
+  return level === 'Basic' ? 'level-basic' : level === 'Intermediate' ? 'level-intermediate' : 'level-advanced';
+}
+
+function typeset(){
+  if(window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise();
+}
+
+function renderAll(){
+  renderMCQ('All');
+  renderMatch('All');
+  renderFill('All');
+  updateReport();
+  typeset();
+}
+
+function renderMCQ(filter='All'){
+  const el = document.getElementById('mcqContainer');
+  el.innerHTML = '';
+  BANK.mcqs.forEach((item, i) => {
+    if(filter !== 'All' && item.level !== filter) return;
+    const chosen = state.mcq[i];
+    const card = document.createElement('div');
+    card.className = 'question-card';
+    card.dataset.level = item.level;
+    let opts = item.options.map((op, oi) => {
+      let cls = 'option-btn';
+      if(chosen !== null){
+        if(oi === item.answer) cls += ' correct';
+        else if(oi === chosen) cls += ' wrong';
+      }
+      return `<button class="${cls}" ${chosen!==null?'disabled':''} onclick="answerMCQ(${i},${oi})">(${String.fromCharCode(65+oi)}) ${op}</button>`;
+    }).join('');
+    let fb = chosen === null ? '' : `<div class="feedback-box show ${chosen===item.answer?'correct':'wrong'}">${chosen===item.answer?'✅ Correct':'❌ Incorrect'}. Answer: <strong>(${String.fromCharCode(65+item.answer)}) ${item.options[item.answer]}</strong><br>${item.explanation}</div>`;
+    card.innerHTML = `<div class="q-head"><div class="q-title">MCQ ${i+1}. ${item.q}</div><span class="q-num ${levelClass(item.level)}">${item.level}</span></div><div class="options">${opts}</div>${fb}`;
+    el.appendChild(card);
+  });
+  typeset();
+}
+
+function answerMCQ(i, oi){
+  if(state.mcq[i] !== null) return;
+  state.mcq[i] = (oi === BANK.mcqs[i].answer);
+  renderMCQ(currentFilter('mcq'));
+  updateReport();
+}
+
+function renderMatch(filter='All'){
+  const el = document.getElementById('matchContainer');
+  el.innerHTML = '';
+  BANK.matches.forEach((item, i) => {
+    if(filter !== 'All' && item.level !== filter) return;
+    const chosen = state.match[i];
+    const card = document.createElement('div');
+    card.className = 'question-card';
+    const disabled = chosen !== null ? 'disabled' : '';
+    const opts = ['<option value="">Select the correct match</option>'].concat(item.options.map(op => `<option value="${escapeAttr(op)}" ${chosen && chosen.value===op?'selected':''}>${op}</option>`)).join('');
+    let fb = chosen === null ? '' : `<div class="feedback-box show ${chosen.correct?'correct':'wrong'}">${chosen.correct?'✅ Correct':'❌ Incorrect'}. Correct match: <strong>${item.answer}</strong><br>${item.explanation}</div>`;
+    card.innerHTML = `<div class="q-head"><div class="q-title">Match ${i+1}. Match: <strong>${item.left}</strong></div><span class="q-num ${levelClass(item.level)}">${item.level}</span></div>
+      <div class="match-grid"><div class="math-note">${item.left}</div><select class="match-select" id="match-${i}" ${disabled} onchange="answerMatch(${i}, this.value)">${opts}</select></div>${fb}`;
+    el.appendChild(card);
+  });
+  typeset();
+}
+
+function answerMatch(i, value){
+  if(!value || state.match[i] !== null) return;
+  const correct = normalize(value) === normalize(BANK.matches[i].answer);
+  state.match[i] = {value, correct};
+  renderMatch(currentFilter('match'));
+  updateReport();
+}
+
+function renderFill(filter='All'){
+  const el = document.getElementById('fillContainer');
+  el.innerHTML = '';
+  BANK.fills.forEach((item, i) => {
+    if(filter !== 'All' && item.level !== filter) return;
+    const chosen = state.fill[i];
+    const card = document.createElement('div');
+    card.className = 'question-card';
+    let fb = chosen === null ? '' : `<div class="feedback-box show ${chosen.correct?'correct':'wrong'}">${chosen.correct?'✅ Correct':'❌ Incorrect'}. Correct answer: <strong>${item.answer}</strong><br>${item.explanation}</div>`;
+    card.innerHTML = `<div class="q-head"><div class="q-title">Fill ${i+1}. ${item.q}</div><span class="q-num ${levelClass(item.level)}">${item.level}</span></div>
+      <div class="fill-row"><input class="fill-input" id="fill-${i}" type="text" placeholder="Type answer here" value="${chosen?escapeAttr(chosen.value):''}" ${chosen!==null?'disabled':''}/>
+      <button class="check-btn" ${chosen!==null?'disabled':''} onclick="answerFill(${i})">Check</button></div>${fb}`;
+    el.appendChild(card);
+  });
+  typeset();
+}
+
+function answerFill(i){
+  if(state.fill[i] !== null) return;
+  const input = document.getElementById('fill-'+i);
+  const value = input.value.trim();
+  if(!value) return;
+  const correct = BANK.fills[i].alts.some(a => normalize(value) === normalize(a));
+  state.fill[i] = {value, correct};
+  renderFill(currentFilter('fill'));
+  updateReport();
+}
+
+function normalize(s){
+  return String(s).toLowerCase()
+    .replace(/\\\(|\\\)|\$|\{|\}|\\text|\\mathbb|\\mid|\\times|\\neq|\\frac/g,'')
+    .replace(/[^a-z0-9.+\-]/g,'')
+    .trim();
+}
+function escapeAttr(s){ return String(s).replace(/"/g,'&quot;'); }
+
+function currentFilter(type){
+  const section = type === 'mcq' ? '#mcq-section' : type === 'match' ? '#match-section' : '#fill-section';
+  const active = document.querySelector(`${section} .filter-btn.active`);
+  return active ? active.textContent.trim() : 'All';
+}
+
+function filterQuestions(type, level, btn){
+  const parent = btn.parentElement;
+  parent.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  if(type==='mcq') renderMCQ(level);
+  if(type==='match') renderMatch(level);
+  if(type==='fill') renderFill(level);
+}
+
+function calc(){
+  const mcqCorrect = state.mcq.filter(v => v === true).length;
+  const mcqAttempt = state.mcq.filter(v => v !== null).length;
+  const matchCorrect = state.match.filter(v => v && v.correct).length;
+  const matchAttempt = state.match.filter(v => v !== null).length;
+  const fillCorrect = state.fill.filter(v => v && v.correct).length;
+  const fillAttempt = state.fill.filter(v => v !== null).length;
+  return {
+    mcqCorrect, mcqAttempt, matchCorrect, matchAttempt, fillCorrect, fillAttempt,
+    totalCorrect: mcqCorrect + matchCorrect + fillCorrect,
+    totalAttempt: mcqAttempt + matchAttempt + fillAttempt,
+    total: 150
+  };
+}
+
+function pct(a,b){ return b ? Math.round((a/b)*100) : 0; }
+function setBar(id, value){ document.getElementById(id).style.width = value + '%'; }
+
+function updateReport(){
+  const c = calc();
+  document.getElementById('totalScore').textContent = `${c.totalCorrect}/150`;
+  document.getElementById('mcqScore').textContent = `${c.mcqCorrect}/50`;
+  document.getElementById('matchScore').textContent = `${c.matchCorrect}/50`;
+  document.getElementById('fillScore').textContent = `${c.fillCorrect}/50`;
+  setBar('totalBar', pct(c.totalCorrect,150));
+  setBar('mcqBar', pct(c.mcqCorrect,50));
+  setBar('matchBar', pct(c.matchCorrect,50));
+  setBar('fillBar', pct(c.fillCorrect,50));
+
+  document.getElementById('attemptedReport').textContent = `${c.totalAttempt}/150`;
+  document.getElementById('correctReport').textContent = c.totalCorrect;
+  const percent = pct(c.totalCorrect,150);
+  document.getElementById('percentReport').textContent = percent + '%';
+  document.getElementById('levelReport').textContent = levelName(percent);
+
+  const rows = [
+    ['MCQ', c.mcqCorrect, 50, pct(c.mcqCorrect,50), suggest(pct(c.mcqCorrect,50),'MCQ')],
+    ['Match the Following', c.matchCorrect, 50, pct(c.matchCorrect,50), suggest(pct(c.matchCorrect,50),'matching')],
+    ['Fill in the Blanks', c.fillCorrect, 50, pct(c.fillCorrect,50), suggest(pct(c.fillCorrect,50),'concept recall')]
+  ];
+  document.getElementById('reportTable').innerHTML = rows.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}%</td><td>${r[4]}</td></tr>`).join('');
+  updateReward(percent, c.totalAttempt);
+}
+
+function levelName(p){
+  if(p>=90) return 'Topper Master';
+  if(p>=75) return 'Strong Performer';
+  if(p>=60) return 'Improving Well';
+  if(p>=40) return 'Foundation Builder';
+  return 'Starter';
+}
+function suggest(p, section){
+  if(p>=85) return `Excellent. Try timed ${section} practice.`;
+  if(p>=60) return `Good. Revise mistakes and repeat ${section}.`;
+  if(p>=30) return `Revise definitions and examples before more ${section}.`;
+  return `Start again from basics and solve slowly.`;
+}
+function updateReward(percent, attempted){
+  const title = document.getElementById('rewardTitle');
+  const msg = document.getElementById('rewardMessage');
+  const box = document.getElementById('badgeBox');
+  if(attempted === 0){
+    title.textContent = '🌱 Starter Learner';
+    msg.textContent = 'Start answering to unlock badges.';
+  } else if(percent >= 90){
+    title.textContent = '🏆 Real Numbers Topper';
+    msg.textContent = 'Excellent accuracy. You are ready for exam-level and JEE foundation practice.';
+  } else if(percent >= 75){
+    title.textContent = '🥇 Divisibility Champion';
+    msg.textContent = 'Strong performance. Revise only the wrong answers.';
+  } else if(percent >= 60){
+    title.textContent = '🥈 Concept Builder';
+    msg.textContent = 'Good progress. Practise proofs and decimal expansion more.';
+  } else if(percent >= 40){
+    title.textContent = '🥉 Foundation Improver';
+    msg.textContent = 'You are building the base. Repeat the Basic and Intermediate sections.';
+  } else {
+    title.textContent = '🌱 Starter Learner';
+    msg.textContent = 'Focus on definitions, examples, and HCF–LCM basics first.';
+  }
+  const badges = [];
+  if(attempted >= 25) badges.push('✅ 25 Attempt Badge');
+  if(attempted >= 75) badges.push('🔥 Halfway Warrior');
+  if(attempted >= 150) badges.push('🎯 Full Practice Completed');
+  if(percent >= 60) badges.push('📘 CBSE Ready');
+  if(percent >= 85) badges.push('🚀 Topper Track');
+  box.innerHTML = badges.map(b => `<span class="badge">${b}</span>`).join('') || '<span class="badge">Answer questions to unlock rewards</span>';
+}
+
+function saveFeedback(){
+  document.getElementById('feedbackSaved').classList.add('show');
+}
+
+function resetAll(){
+  if(!confirm('Reset all answers and report?')) return;
+  state.mcq.fill(null); state.match.fill(null); state.fill.fill(null);
+  renderAll();
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+(function(){
+  const links = Array.from(document.querySelectorAll('.nav-list a'));
+  const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        links.forEach(a => a.classList.remove('active-topic'));
+        const a = document.querySelector('.nav-list a[href="#'+entry.target.id+'"]');
+        if(a) a.classList.add('active-topic');
+      }
+    });
+  }, {rootMargin:'-20% 0px -70% 0px', threshold:0.01});
+  sections.forEach(s => obs.observe(s));
+})();
+
+document.addEventListener('DOMContentLoaded', renderAll);
+</script>
+</body>
+</html>

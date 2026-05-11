@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Class 10 CBSE Real Numbers – Divisibility Master Notes | Final Sidebar Design</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']], processEscapes: true },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+:root{
+  --navy:#0f2f70; --navy2:#092052; --blue:#2563eb; --sky:#eaf4ff; --cyan:#06b6d4;
+  --purple:#7c3aed; --green:#16a34a; --orange:#f59e0b; --ink:#172033; --muted:#64748b;
+  --paper:#ffffff; --line:#d8e4f6; --soft:#f7fbff; --cream:#fff8ec;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; overflow-x:hidden;}
+body{margin:0;font-family:"Segoe UI",Arial,sans-serif;color:var(--ink);background:
+  radial-gradient(circle at top left, #dff7ff 0, transparent 30%),
+  radial-gradient(circle at top right, #f4e8ff 0, transparent 30%),
+  linear-gradient(180deg,#f8fbff 0%,#eef7ff 100%);line-height:1.72; overflow-x:hidden;}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(90deg,rgba(37,99,235,.05) 1px,transparent 1px);background-size:28px 28px;opacity:.55;z-index:-1;}
+.page{width:100%;max-width:1320px;margin:0 auto;padding:22px;}
+.hero{border-radius:28px;padding:34px 34px;background:linear-gradient(135deg,#0f3a8a 0%,#2563eb 52%,#06b6d4 100%);color:#fff;box-shadow:0 18px 48px rgba(37,99,235,.25);position:relative;overflow:hidden;margin-bottom:18px;}
+.hero:after{content:"∑ √ π ÷ ×";position:absolute;right:20px;top:8px;font-size:54px;font-weight:900;opacity:.13;letter-spacing:8px;white-space:nowrap;}
+.hero .eyebrow{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:7px 13px;font-weight:800;font-size:.9rem;}
+.hero h1{font-size:clamp(2rem,4.6vw,3.9rem);line-height:1;margin:18px 0 8px;letter-spacing:-1.2px;color:#fff;border:0;padding:0;}
+.hero h2{font-size:clamp(1.05rem,2.2vw,1.62rem);margin:0;color:#dff7ff;border:0;padding:0;}
+.hero p{font-size:1.04rem;max-width:850px;color:#eef7ff;margin:16px 0 0;}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;}
+button,.btn{border:none;border-radius:14px;padding:12px 16px;font-weight:850;cursor:pointer;text-decoration:none;display:inline-block;}
+button{background:#fff;color:#123b8a}.btn{background:#111827;color:#fff}
+.study-layout{display:grid;grid-template-columns:300px minmax(0,1fr);gap:22px;align-items:start;}
+.side-nav{position:sticky;top:14px;max-height:calc(100vh - 28px);overflow-y:auto;overflow-x:hidden;background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:24px;box-shadow:0 14px 35px rgba(15,23,42,.10);padding:16px;scrollbar-width:thin;}
+.side-nav h3{margin:0 0 10px;color:var(--navy);font-size:1rem;display:flex;align-items:center;gap:8px;}
+.side-nav h3::before{content:"☰";background:#eaf2ff;color:#2563eb;border-radius:10px;padding:3px 7px;font-size:.9rem;}
+.nav-small{color:#64748b;font-size:.82rem;margin:0 0 12px;line-height:1.35;}
+.nav-list{display:flex;flex-direction:column;gap:6px;}
+.nav-list a{text-decoration:none;color:#26364d;background:#f7faff;border:1px solid #e3edfb;border-radius:13px;padding:9px 10px;font-weight:760;font-size:.88rem;line-height:1.25;display:block;}
+.nav-list a:hover{background:#e5f1ff;color:#0f3a8a;border-color:#bfdbfe;transform:translateX(2px);}
+.nav-list a.formula-link{background:#102a63;color:#fff;border-color:#102a63;}
+.content-shell{min-width:0;width:100%;}
+.quick-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:0 0 18px;}
+.qcard{background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:0 9px 24px rgba(15,23,42,.06);min-width:0;overflow:hidden;}
+.qcard b{display:block;color:var(--navy);margin-bottom:4px;}
+main{min-width:0;width:100%;}
+.lesson-card{background:rgba(255,255,255,.98);border:1px solid var(--line);border-radius:24px;margin:0 0 22px;padding:26px;box-shadow:0 12px 34px rgba(15,23,42,.07);overflow:hidden;break-inside:avoid;scroll-margin-top:22px;}
+.section-kicker{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:#0ea5e9;font-weight:900;margin-bottom:6px;}
+h1{font-size:1.78rem;line-height:1.18;margin:0 0 16px;color:#123b8a;border-bottom:3px solid #e2eeff;padding-bottom:10px;overflow-wrap:anywhere;}
+h2{font-size:1.24rem;color:#7c3aed;margin:24px 0 10px;padding-left:12px;border-left:5px solid #f59e0b;overflow-wrap:anywhere;}
+h3{font-size:1.06rem;color:#0f766e;margin:18px 0 6px;}
+p{margin:10px 0;overflow-wrap:break-word;}strong{color:#123b8a;}
+.math-card{background:linear-gradient(90deg,#f0f7ff,#ffffff);border:1px solid #b9d5ff;border-left:7px solid var(--blue);border-radius:16px;padding:12px 14px;margin:12px 0;overflow-x:auto;overflow-y:hidden;max-width:100%;font-size:1.05rem;white-space:normal;}
+.math-card .mjx-container{min-width:0!important;max-width:100%!important;overflow-x:auto;overflow-y:hidden;padding:2px 0;}
+.clean-list{background:#fbfdff;border:1px solid #e4edf9;border-radius:16px;padding:12px 18px 12px 34px;margin:14px 0;}
+.clean-list li{margin:6px 0;padding-left:2px;}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;margin:16px 0;background:white;max-width:100%;}
+table{border-collapse:collapse;width:100%;min-width:520px;}th{background:linear-gradient(135deg,#123b8a,#2563eb);color:#fff;text-align:left;padding:11px;}td{border-bottom:1px solid #e9eef7;padding:10px;vertical-align:top;}tr:nth-child(even) td{background:#f8fbff;}
+.note{border-radius:14px;padding:10px 13px;}.example{background:#fff8ec;border-left:6px solid var(--orange);}.conclusion{background:#ecfdf5;border-left:6px solid var(--green);font-weight:700;}
+.soft-divider{height:1px;background:linear-gradient(90deg,transparent,#d7e4f8,transparent);margin:18px 0;}
+.footer{text-align:center;color:#64748b;padding:24px 8px;}
+.top-link{position:fixed;right:18px;bottom:18px;background:#123b8a;color:#fff;border-radius:999px;padding:10px 14px;text-decoration:none;font-weight:900;box-shadow:0 10px 24px rgba(15,23,42,.2);z-index:10;}
+@media(max-width:1050px){.study-layout{grid-template-columns:260px minmax(0,1fr);gap:16px}.quick-cards{grid-template-columns:repeat(2,minmax(0,1fr));}.page{padding:16px}.lesson-card{padding:22px}}
+@media(max-width:820px){.study-layout{grid-template-columns:1fr}.side-nav{position:relative;top:0;max-height:360px}.quick-cards{grid-template-columns:repeat(2,minmax(0,1fr));}.hero{padding:28px 22px;}}
+@media(max-width:560px){.quick-cards{grid-template-columns:1fr}.page{padding:12px}.lesson-card{padding:18px;border-radius:18px}h1{font-size:1.42rem}.hero h1{font-size:2rem}.top-link{display:none}table{min-width:480px}}
+@media print{
+  body{background:white;font-size:11.5pt;line-height:1.42;color:#111827;}
+  body::before{display:none;}
+  .page{max-width:none;padding:0;}
+  .hero{border-radius:0;box-shadow:none;padding:18px;background:#123b8a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;margin-bottom:8px;}
+  .actions,.side-nav,.top-link{display:none!important;}
+  .study-layout{display:block;}
+  .quick-cards{grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:8px;}
+  .qcard,.lesson-card{box-shadow:none;border:1px solid #ccd8ea;break-inside:avoid;page-break-inside:avoid;border-radius:12px;padding:12px;margin-bottom:10px;}
+  h1{font-size:15.5pt;} h2{font-size:13pt;} h3{font-size:12pt;}
+  .math-card{background:#f8fbff!important;border:1px solid #b8c9e8;border-left:4px solid #2563eb;break-inside:avoid;page-break-inside:avoid;}
+  @page{size:A4;margin:12mm;}
+}
+
+
+/* ===== FINAL FIX: always-visible left navigation on desktop ===== */
+@media (min-width: 821px){
+  .page{
+    max-width: 1360px;
+    padding: 22px 24px 22px 350px;
+    margin: 0 auto;
+  }
+  .study-layout{
+    display:block;
+  }
+  .side-nav{
+    position: fixed;
+    left: max(18px, calc((100vw - 1360px)/2 + 24px));
+    top: 18px;
+    width: 300px;
+    height: calc(100vh - 36px);
+    max-height: none;
+    z-index: 20;
+  }
+  .content-shell{
+    width: 100%;
+    min-width: 0;
+  }
+  .hero{
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .lesson-card{
+    scroll-margin-top: 24px;
+  }
+}
+@media (max-width: 820px){
+  .page{padding:12px;}
+  .study-layout{display:block;}
+  .side-nav{
+    position: sticky;
+    top: 8px;
+    max-height: 42vh;
+    width: 100%;
+    margin-bottom: 16px;
+    z-index: 12;
+  }
+}
+@media print{
+  .page{padding:0!important;max-width:none!important;}
+  .side-nav{display:none!important;}
+}
+
+</style>
+</head>
+<body>
+<div class="page" id="top">
+<header class="hero">
+<span class="eyebrow">CBSE Class 10 • Real Numbers</span>
+<h1>Divisibility Master Notes</h1>
+<h2>Average Student → Topper Level</h2>
+<p>A clean printable page for definitions, Euclid’s algorithm, HCF–LCM, prime factorisation, decimal expansion, irrationality proofs, topper-level proofs, practice set, and answer key.</p>
+<div class="actions"><button onclick="window.print()">🖨️ Print / Save PDF</button><a class="btn" href="#39-final-topper-formula-sheet">Final Formula Sheet</a></div>
+</header><div class="study-layout"><aside class="side-nav"><h3>Left Navigation</h3><p class="nav-small">Click any topic to jump. The content opens on the right side.</p><div class="nav-list"><a href="#1-why-this-topic-is-important-in-class-10">1. Why This Topic Is Important in Class 10</a><a href="#2-meaning-of-divisibility">2. Meaning of Divisibility</a><a href="#3-simple-meaning-for-average-students">3. Simple Meaning for Average Students</a><a href="#4-important-symbols">4. Important Symbols</a><a href="#5-divisor-cannot-be-zero">5. Divisor Cannot Be Zero</a><a href="#6-divisibility-with-negative-numbers">6. Divisibility with Negative Numbers</a><a href="#7-factor-and-multiple">7. Factor and Multiple</a><a href="#8-important-properties-of-divisibility">8. Important Properties of Divisibility</a><a href="#9-euclid-s-division-lemma">9. Euclid’s Division Lemma</a><a href="#10-euclid-s-division-algorithm">10. Euclid’s Division Algorithm</a><a href="#11-why-euclid-s-algorithm-works">11. Why Euclid’s Algorithm Works</a><a href="#12-fundamental-theorem-of-arithmetic">12. Fundamental Theorem of Arithmetic</a><a href="#13-prime-factorisation-method">13. Prime Factorisation Method</a><a href="#14-checking-divisibility-using-prime-factorisation">14. Checking Divisibility Using Prime Factorisation</a><a href="#15-hcf-by-prime-factorisation">15. HCF by Prime Factorisation</a><a href="#16-lcm-by-prime-factorisation">16. LCM by Prime Factorisation</a><a href="#17-relation-between-hcf-and-lcm">17. Relation Between HCF and LCM</a><a href="#18-important-cbse-problem-type-find-hcf-and-lcm-from-product">18. Important CBSE Problem Type: Find HCF and LCM from Product</a><a href="#19-important-cbse-application-word-problems-on-hcf">19. Important CBSE Application: Word Problems on HCF</a><a href="#20-important-cbse-application-word-problems-on-lcm">20. Important CBSE Application: Word Problems on LCM</a><a href="#21-decimal-expansion-of-rational-numbers">21. Decimal Expansion of Rational Numbers</a><a href="#22-decimal-expansion-practice">22. Decimal Expansion Practice</a><a href="#23-proof-of-irrationality">23. Proof of Irrationality</a><a href="#24-prove-that-sqrt-2-is-irrational">24. Prove That \(\sqrt{2}\) Is Irrational</a><a href="#25-prove-that-sqrt-3-is-irrational">25. Prove That \(\sqrt{3}\) Is Irrational</a><a href="#26-prove-that-5-sqrt-2-is-irrational">26. Prove That \(5+\sqrt{2}\) Is Irrational</a><a href="#27-prove-that-3-sqrt-2-is-irrational">27. Prove That \(3\sqrt{2}\) Is Irrational</a><a href="#28-algebraic-divisibility-for-topper-students">28. Algebraic Divisibility for Topper Students</a><a href="#29-topper-proof-n-2-n-is-divisible-by-2">29. Topper Proof: \(n^2-n\) Is Divisible by 2</a><a href="#30-topper-proof-n-3-n-is-divisible-by-6">30. Topper Proof: \(n^3-n\) Is Divisible by 6</a><a href="#31-topper-proof-n-5-n-is-divisible-by-30">31. Topper Proof: \(n^5-n\) Is Divisible by 30</a><a href="#32-modular-arithmetic-for-cbse-topper-level">32. Modular Arithmetic for CBSE Topper Level</a><a href="#33-remainder-example-for-toppers">33. Remainder Example for Toppers</a><a href="#34-another-remainder-example">34. Another Remainder Example</a><a href="#35-cbse-exam-strategy-how-average-students-become-toppers">35. CBSE Exam Strategy: How Average Students Become Toppers</a><a href="#36-common-mistakes-to-avoid">36. Common Mistakes to Avoid</a><a href="#37-full-practice-set-for-class-10-cbse">37. Full Practice Set for Class 10 CBSE</a><a href="#38-short-answer-key">38. Short Answer Key</a><a class="formula-link" href="#39-final-topper-formula-sheet">39. Final Topper Formula Sheet</a><a href="#40-final-learning-path">40. Final Learning Path</a></div></aside><div class="content-shell"><section class="quick-cards">
+<div class="qcard"><b>Core Rule</b>\(a\mid b\iff b=ak\)</div>
+<div class="qcard"><b>Euclid Form</b>\(a=bq+r\)</div>
+<div class="qcard"><b>HCF–LCM</b>\(\text{HCF}\times\text{LCM}=a\times b\)</div>
+<div class="qcard"><b>Topper Proof</b>\(6\mid n^3-n\)</div>
+</section><main>
+
+<!-- Top Right Link to Questions Page -->
+<div style="
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+">
+  <a 
+    href="questions.html"
+    target="_blank"
+    style="
+      display: inline-block;
+      padding: 12px 18px;
+      background: #123b8a;
+      color: white;
+      text-decoration: none;
+      border-radius: 14px;
+      font-weight: 800;
+      font-family: Arial, sans-serif;
+      box-shadow: 0 8px 20px rgba(15,23,42,0.18);
+    ">
+    Practice 150 Questions
+  </a>
+</div>
+
+
+<p>Below is a <strong>complete Class 10 CBSE Real Numbers – Divisibility Master Content</strong> designed for an <strong>average student to become a topper</strong>. It starts from basic understanding, moves to intermediate proof skills, and ends with advanced/JEE-foundation thinking based on the earlier divisibility notes.</p>
+<div class="soft-divider"></div>
+<section class="lesson-card" id="1-why-this-topic-is-important-in-class-10"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>1. Why This Topic Is Important in Class 10</h1>
+<p>Divisibility is not just about checking whether one number divides another number. In Class 10 CBSE, it becomes the foundation for:</p>
+<ol class="clean-list numbered">
+<li>Euclid’s Division Lemma</li>
+<li>Euclid’s Division Algorithm</li>
+<li>HCF and LCM</li>
+<li>Fundamental Theorem of Arithmetic</li>
+<li>Prime factorisation</li>
+<li>Decimal expansion of rational numbers</li>
+<li>Proof of irrationality</li>
+<li>Higher-level number theory and JEE foundation</li>
+</ol>
+<p>If a student understands divisibility properly, the chapter <strong>Real Numbers</strong> becomes much easier.</p>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="2-meaning-of-divisibility"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>2. Meaning of Divisibility</h1>
+<p>Let \(a\) and \(b\) be integers, and \(a \neq 0\).</p>
+<p>We say that:</p>
+<div class="math-card">\[a \mid b\]</div>
+<p>if there exists an integer \(k\) such that:</p>
+<div class="math-card">\[b = ak\]</div>
+<p>This is read as:</p>
+<p><strong>“a divides b.”</strong></p>
+<p class="note example">Example:</p>
+<div class="math-card">\[4 \mid 28\]</div>
+<p>because:</p>
+<div class="math-card">\[28 = 4 \times 7\]</div>
+<p>Here, 7 is an integer.</p>
+<p>So 4 divides 28.</p>
+<p>But:</p>
+<div class="math-card">\[4 \nmid 30\]</div>
+<p>because:</p>
+<div class="math-card">\[30 \div 4 = 7.5\]</div>
+<p>7.5 is not an integer.</p>
+<p>So 4 does not divide 30.</p>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="3-simple-meaning-for-average-students"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>3. Simple Meaning for Average Students</h1>
+<p>A number is divisible by another number if division leaves <strong>remainder 0</strong>.</p>
+<p class="note example">Example:</p>
+<div class="math-card">\[36 \div 6 = 6\]</div>
+<p>Remainder is 0.</p>
+<p>So:</p>
+<div class="math-card">\[6 \mid 36\]</div>
+<p>But:</p>
+<div class="math-card">\[38 \div 6 = 6 \text{ remainder } 2\]</div>
+<p>Remainder is not 0.</p>
+<p>So:</p>
+<div class="math-card">\[6 \nmid 38\]</div>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="4-important-symbols"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>4. Important Symbols</h1>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr></thead><tbody>
+<tr>
+<td>\(a \mid b\)</td>
+<td>a divides b</td>
+<td>\(5 \mid 45\)</td>
+</tr>
+<tr>
+<td>\(a \nmid b\)</td>
+<td>a does not divide b</td>
+<td>\(5 \nmid 47\)</td>
+</tr>
+<tr>
+<td>\(b = ak\)</td>
+<td>b is a multiple of a</td>
+<td>\(45 = 5 \times 9\)</td>
+</tr>
+<tr>
+<td>\(a\) is factor of \(b\)</td>
+<td>a divides b</td>
+<td>5 is a factor of 45</td>
+</tr>
+</tbody></table></div>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="5-divisor-cannot-be-zero"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>5. Divisor Cannot Be Zero</h1>
+<p>In:</p>
+<div class="math-card">\[a \mid b\]</div>
+<p>the divisor \(a\) cannot be zero.</p>
+<p>Why?</p>
+<p>Because division by zero is not defined.</p>
+<p class="note example">Example:</p>
+<div class="math-card">\[0 \mid 5\]</div>
+<p>would mean:</p>
+<div class="math-card">\[5 = 0 \times k\]</div>
+<p>But:</p>
+<div class="math-card">\[0 \times k = 0\]</div>
+<p>for every integer \(k\).</p>
+<p>So it can never become 5.</p>
+<p class="note conclusion">Therefore:</p>
+<div class="math-card">\[0 \nmid 5\]</div>
+<p>But:</p>
+<div class="math-card">\[5 \mid 0\]</div>
+<p>is true because:</p>
+<div class="math-card">\[0 = 5 \times 0\]</div>
+<p class="note conclusion">So remember:</p>
+<div class="math-card">\[0 \nmid a \quad \text{for } a \neq 0\]</div>
+<p>but:</p>
+<div class="math-card">\[a \mid 0 \quad \text{for } a \neq 0\]</div>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="6-divisibility-with-negative-numbers"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>6. Divisibility with Negative Numbers</h1>
+<p>Divisibility also works with negative integers.</p>
+<p class="note example">Example:</p>
+<div class="math-card">\[-4 \mid 20\]</div>
+<p>because:</p>
+<div class="math-card">\[20 = -4 \times (-5)\]</div>
+<p>So:</p>
+<div class="math-card">\[-4 \mid 20\]</div>
+<p class="note example">Example:</p>
+<div class="math-card">\[4 \mid -20\]</div>
+<p>because:</p>
+<div class="math-card">\[-20 = 4 \times (-5)\]</div>
+<p>So:</p>
+<div class="math-card">\[4 \mid -20\]</div>
+<p class="note example">Example:</p>
+<div class="math-card">\[-4 \mid -20\]</div>
+<p>because:</p>
+<div class="math-card">\[-20 = -4 \times 5\]</div>
+<p>So:</p>
+<div class="math-card">\[-4 \mid -20\]</div>
+<h2 id="topper-point">Topper Point</h2>
+<p>If:</p>
+<div class="math-card">\[a \mid b\]</div>
+<p>then:</p>
+<div class="math-card">\[-a \mid b\]</div>
+<div class="math-card">\[a \mid -b\]</div>
+<div class="math-card">\[-a \mid -b\]</div>
+<p>The sign does not matter much. The quotient must be an integer.</p>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="7-factor-and-multiple"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>7. Factor and Multiple</h1>
+<p>If:</p>
+<div class="math-card">\[a \mid b\]</div>
+<p>then:</p>
+<ul class="clean-list">
+<li>\(a\) is a factor of \(b\)</li>
+<li>\(a\) is a divisor of \(b\)</li>
+<li>\(b\) is a multiple of \(a\)</li>
+</ul>
+<p class="note example">Example:</p>
+<div class="math-card">\[6 \mid 42\]</div>
+<p>because:</p>
+<div class="math-card">\[42 = 6 \times 7\]</div>
+<p>So:</p>
+<ul class="clean-list">
+<li>6 is a factor of 42</li>
+<li>6 is a divisor of 42</li>
+<li>42 is a multiple of 6</li>
+</ul>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="8-important-properties-of-divisibility"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>8. Important Properties of Divisibility</h1>
+<h2 id="property-1-every-non-zero-integer-divides-itself">Property 1: Every non-zero integer divides itself</h2>
+<div class="math-card">\[a \mid a\]</div>
+<p>because:</p>
+<div class="math-card">\[a = a \times 1\]</div>
+<p class="note example">Example:</p>
+<div class="math-card">\[9 \mid 9\]</div>
+<div class="soft-divider"></div>
+<h2 id="property-2-1-divides-every-integer">Property 2: 1 divides every integer</h2>
+<div class="math-card">\[1 \mid a\]</div>
+<p>because:</p>
+<div class="math-card">\[a = 1 \times a\]</div>
+<p class="note example">Example:</p>
+<div class="math-card">\[1 \mid 100\]</div>
+<div class="soft-divider"></div>
+<h2 id="property-3-every-non-zero-integer-divides-zero">Property 3: Every non-zero integer divides zero</h2>
+<div class="math-card">\[a \mid 0\]</div>
+<p>because:</p>
+<div class="math-card">\[0 = a \times 0\]</div>
+<p class="note example">Example:</p>
+<div class="math-card">\[12 \mid 0\]</div>
+<div class="soft-divider"></div>
+<h2 id="property-4-zero-divides-no-non-zero-integer">Property 4: Zero divides no non-zero integer</h2>
+<div class="math-card">\[0 \nmid a\]</div>
+<p>where:</p>
+<div class="math-card">\[a \neq 0\]</div>
+<p class="note example">Example:</p>
+<div class="math-card">\[0 \nmid 25\]</div>
+<div class="soft-divider"></div>
+<h2 id="property-5-transitive-property">Property 5: Transitive Property</h2>
+<p>If:</p>
+<div class="math-card">\[a \mid b\]</div>
+<p>and:</p>
+<div class="math-card">\[b \mid c\]</div>
+<p>then:</p>
+<div class="math-card">\[a \mid c\]</div>
+<h3>Proof</h3>
+<p>Since:</p>
+<div class="math-card">\[a \mid b\]</div>
+<p>we can write:</p>
+<div class="math-card">\[b = ax\]</div>
+<p>for some integer \(x\).</p>
+<p>Since:</p>
+<div class="math-card">\[b \mid c\]</div>
+<p>we can write:</p>
+<div class="math-card">\[c = by\]</div>
+<p>for some integer \(y\).</p>
+<p>Substitute \(b = ax\):</p>
+<div class="math-card">\[c = (ax)y\]</div>
+<div class="math-card">\[c = a(xy)\]</div>
+<p>Since (xy) is an integer:</p>
+<div class="math-card">\[a \mid c\]</div>
+<h3>Example</h3>
+<div class="math-card">\[3 \mid 12\]</div>
+<p>and:</p>
+<div class="math-card">\[12 \mid 60\]</div>
+<p class="note conclusion">Therefore:</p>
+<div class="math-card">\[3 \mid 60\]</div>
+<div class="soft-divider"></div>
+<h2 id="property-6-linear-combination-property">Property 6: Linear Combination Property</h2>
+<p>If:</p>
+<div class="math-card">\[a \mid b\]</div>
+<p>and:</p>
+<div class="math-card">\[a \mid c\]</div>
+<p>then:</p>
+<div class="math-card">\[a \mid (b+c)\]</div>
+<div class="math-card">\[a \mid (b-c)\]</div>
+<p>and more generally:</p>
+<div class="math-card">\[a \mid (mb+nc)\]</div>
+<p>where \(m,n \in \mathbb{Z}\).</p>
+<h3>Proof</h3>
+<p>Since:</p>
+<div class="math-card">\[a \mid b\]</div>
+<div class="math-card">\[b = ax\]</div>
+<p>Since:</p>
+<div class="math-card">\[a \mid c\]</div>
+<div class="math-card">\[c = ay\]</div>
+<p>Now:</p>
+<div class="math-card">\[mb+nc = m(ax)+n(ay)\]</div>
+<div class="math-card">\[mb+nc = a(mx+ny)\]</div>
+<p>Since \(mx+ny\) is an integer:</p>
+<div class="math-card">\[a \mid (mb+nc)\]</div>
+<h3>Example</h3>
+<p>Given:</p>
+<div class="math-card">\[5 \mid 20\]</div>
+<p>and:</p>
+<div class="math-card">\[5 \mid 35\]</div>
+<p>Then:</p>
+<div class="math-card">\[5 \mid (20+35)\]</div>
+<div class="math-card">\[5 \mid 55\]</div>
+<p>Also:</p>
+<div class="math-card">\[5 \mid (35-20)\]</div>
+<div class="math-card">\[5 \mid 15\]</div>
+<p>And:</p>
+<div class="math-card">\[5 \mid (2 \times 20 + 3 \times 35)\]</div>
+<div class="math-card">\[5 \mid 145\]</div>
+<p>This is a very important topper-level property.</p>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="9-euclid-s-division-lemma"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>9. Euclid’s Division Lemma</h1>
+<p>Euclid’s Division Lemma says:</p>
+<p>For any two positive integers \(a\) and \(b\), there exist unique integers \(q\) and \(r\) such that:</p>
+<div class="math-card">\[a = bq + r\]</div>
+<p>where:</p>
+<div class="math-card">\[0 \leq r &lt; b\]</div>
+<p>Here:</p>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Symbol</th>
+<th>Meaning</th>
+</tr></thead><tbody>
+<tr>
+<td>\(a\)</td>
+<td>dividend</td>
+</tr>
+<tr>
+<td>\(b\)</td>
+<td>divisor</td>
+</tr>
+<tr>
+<td>\(q\)</td>
+<td>quotient</td>
+</tr>
+<tr>
+<td>\(r\)</td>
+<td>remainder</td>
+</tr>
+</tbody></table></div>
+<p class="note example">Example:</p>
+<p>Divide 43 by 6.</p>
+<div class="math-card">\[43 = 6 \times 7 + 1\]</div>
+<p>Here:</p>
+<div class="math-card">\[a=43,\quad b=6,\quad q=7,\quad r=1\]</div>
+<p>Since remainder is 1:</p>
+<div class="math-card">\[6 \nmid 43\]</div>
+<p>But:</p>
+<div class="math-card">\[42 = 6 \times 7 + 0\]</div>
+<p>Since remainder is 0:</p>
+<div class="math-card">\[6 \mid 42\]</div>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="10-euclid-s-division-algorithm"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>10. Euclid’s Division Algorithm</h1>
+<p>Euclid’s Division Algorithm is used to find the HCF of two positive integers.</p>
+<h2 id="method">Method</h2>
+<p>To find HCF of \(a\) and \(b\), where \(a&gt;b\):</p>
+<p>Step 1:</p>
+<div class="math-card">\[a = bq + r\]</div>
+<p>Step 2: If \(r=0\), then \(b\) is the HCF.</p>
+<p>Step 3: If \(r \neq 0\), divide \(b\) by \(r\).</p>
+<p>Step 4: Continue until remainder becomes 0.</p>
+<p>The divisor at the final step is the HCF.</p>
+<div class="soft-divider"></div>
+<h2 id="example-1-find-hcf-of-135-and-225">Example 1: Find HCF of 135 and 225</h2>
+<p>Since 225 &gt; 135:</p>
+<div class="math-card">\[225 = 135 \times 1 + 90\]</div>
+<p>Now:</p>
+<div class="math-card">\[135 = 90 \times 1 + 45\]</div>
+<p>Now:</p>
+<div class="math-card">\[90 = 45 \times 2 + 0\]</div>
+<p class="note conclusion">Therefore:</p>
+<div class="math-card">\[\text{HCF}(225,135)=45\]</div>
+<div class="soft-divider"></div>
+<h2 id="example-2-find-hcf-of-252-and-198">Example 2: Find HCF of 252 and 198</h2>
+<div class="math-card">\[252 = 198 \times 1 + 54\]</div>
+<div class="math-card">\[198 = 54 \times 3 + 36\]</div>
+<div class="math-card">\[54 = 36 \times 1 + 18\]</div>
+<div class="math-card">\[36 = 18 \times 2 + 0\]</div>
+<p class="note conclusion">Therefore:</p>
+<div class="math-card">\[\text{HCF}(252,198)=18\]</div>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="11-why-euclid-s-algorithm-works"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>11. Why Euclid’s Algorithm Works</h1>
+<p>This is a topper-level understanding.</p>
+<p>If:</p>
+<div class="math-card">\[a = bq + r\]</div>
+<p>then:</p>
+<div class="math-card">\[r = a - bq\]</div>
+<p>Any common divisor of \(a\) and \(b\) must also divide:</p>
+<div class="math-card">\[a - bq\]</div>
+<p>So it divides \(r\).</p>
+<p class="note conclusion">Therefore:</p>
+<div class="math-card">\[\gcd(a,b)=\gcd(b,r)\]</div>
+<p>This is the main logic behind Euclid’s Algorithm.</p>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="12-fundamental-theorem-of-arithmetic"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>12. Fundamental Theorem of Arithmetic</h1>
+<p>Every composite number can be expressed as a product of primes in a unique way, except for the order of the prime factors.</p>
+<p class="note example">Example:</p>
+<div class="math-card">\[180 = 2^2 \times 3^2 \times 5\]</div>
+<p>This prime factorisation is unique.</p>
+<p>You may write:</p>
+<div class="math-card">\[180 = 3^2 \times 2^2 \times 5\]</div>
+<p>but the prime factors and powers remain the same.</p>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="13-prime-factorisation-method"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>13. Prime Factorisation Method</h1>
+<h2 id="example">Example</h2>
+<p>Find prime factorisation of 360.</p>
+<div class="math-card">\[360 = 36 \times 10\]</div>
+<div class="math-card">\[360 = (2^2 \times 3^2)(2 \times 5)\]</div>
+<div class="math-card">\[360 = 2^3 \times 3^2 \times 5\]</div>
+<p>So:</p>
+<div class="math-card">\[360 = 2^3 \times 3^2 \times 5\]</div>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="14-checking-divisibility-using-prime-factorisation"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>14. Checking Divisibility Using Prime Factorisation</h1>
+<p>To check whether \(a \mid b\), compare the prime factors of \(a\) and \(b\).</p>
+<p>If every prime factor of \(a\) occurs in \(b\) with equal or greater power, then:</p>
+<div class="math-card">\[a \mid b\]</div>
+<h2 id="example-1">Example 1</h2>
+<p>Check whether:</p>
+<div class="math-card">\[18 \mid 540\]</div>
+<p>Prime factorise:</p>
+<div class="math-card">\[18 = 2 \times 3^2\]</div>
+<div class="math-card">\[540 = 54 \times 10\]</div>
+<div class="math-card">\[540 = (2 \times 3^3)(2 \times 5)\]</div>
+<div class="math-card">\[540 = 2^2 \times 3^3 \times 5\]</div>
+<p>Now compare:</p>
+<div class="math-card">\[18 = 2^1 \times 3^2\]</div>
+<div class="math-card">\[540 = 2^2 \times 3^3 \times 5\]</div>
+<p>540 contains at least \(2^1\) and \(3^2\).</p>
+<p class="note conclusion">Therefore:</p>
+<div class="math-card">\[18 \mid 540\]</div>
+<div class="soft-divider"></div>
+<h2 id="example-2">Example 2</h2>
+<p>Check whether:</p>
+<div class="math-card">\[72 \mid 2160\]</div>
+<div class="math-card">\[72 = 2^3 \times 3^2\]</div>
+<div class="math-card">\[2160 = 2^4 \times 3^3 \times 5\]</div>
+<p>Since 2160 contains at least \(2^3\) and \(3^2\):</p>
+<div class="math-card">\[72 \mid 2160\]</div>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="15-hcf-by-prime-factorisation"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>15. HCF by Prime Factorisation</h1>
+<p>To find HCF:</p>
+<p>Take the <strong>lowest power of common prime factors</strong>.</p>
+<p class="note example">Example:</p>
+<p>Find HCF of 144 and 360.</p>
+<div class="math-card">\[144 = 2^4 \times 3^2\]</div>
+<div class="math-card">\[360 = 2^3 \times 3^2 \times 5\]</div>
+<p>Common primes are 2 and 3.</p>
+<p>Take lowest powers:</p>
+<div class="math-card">\[2^3 \times 3^2\]</div>
+<div class="math-card">\[= 8 \times 9\]</div>
+<div class="math-card">\[= 72\]</div>
+<p>So:</p>
+<div class="math-card">\[\text{HCF}(144,360)=72\]</div>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="16-lcm-by-prime-factorisation"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>16. LCM by Prime Factorisation</h1>
+<p>To find LCM:</p>
+<p>Take the <strong>highest power of all prime factors</strong>.</p>
+<p class="note example">Example:</p>
+<p>Find LCM of 144 and 360.</p>
+<div class="math-card">\[144 = 2^4 \times 3^2\]</div>
+<div class="math-card">\[360 = 2^3 \times 3^2 \times 5\]</div>
+<p>Highest powers:</p>
+<div class="math-card">\[2^4 \times 3^2 \times 5\]</div>
+<div class="math-card">\[= 16 \times 9 \times 5\]</div>
+<div class="math-card">\[= 720\]</div>
+<p>So:</p>
+<div class="math-card">\[\text{LCM}(144,360)=720\]</div>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="17-relation-between-hcf-and-lcm"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>17. Relation Between HCF and LCM</h1>
+<p>For two positive integers \(a\) and \(b\):</p>
+<div class="math-card">\[a \times b = \text{HCF}(a,b) \times \text{LCM}(a,b)\]</div>
+<p class="note example">Example:</p>
+<p>Let:</p>
+<div class="math-card">\[a = 144,\quad b = 360\]</div>
+<div class="math-card">\[\text{HCF}=72\]</div>
+<div class="math-card">\[\text{LCM}=720\]</div>
+<p>Now:</p>
+<div class="math-card">\[144 \times 360 = 51840\]</div>
+<p>and:</p>
+<div class="math-card">\[72 \times 720 = 51840\]</div>
+<p>So:</p>
+<div class="math-card">\[a \times b = \text{HCF} \times \text{LCM}\]</div>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="18-important-cbse-problem-type-find-hcf-and-lcm-from-product"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>18. Important CBSE Problem Type: Find HCF and LCM from Product</h1>
+<h2 id="example">Example</h2>
+<p>If:</p>
+<div class="math-card">\[a \times b = 1800\]</div>
+<p>and:</p>
+<div class="math-card">\[\text{HCF}(a,b)=12\]</div>
+<p>find LCM.</p>
+<p>Using:</p>
+<div class="math-card">\[a \times b = \text{HCF} \times \text{LCM}\]</div>
+<div class="math-card">\[1800 = 12 \times \text{LCM}\]</div>
+<div class="math-card">\[\text{LCM} = \frac{1800}{12}\]</div>
+<div class="math-card">\[\text{LCM}=150\]</div>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="19-important-cbse-application-word-problems-on-hcf"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>19. Important CBSE Application: Word Problems on HCF</h1>
+<h2 id="problem">Problem</h2>
+<p>Two ropes are 96 cm and 120 cm long. They are to be cut into equal pieces of maximum length. Find the length of each piece.</p>
+<h3>Solution</h3>
+<p>Maximum equal length means HCF.</p>
+<p>Find:</p>
+<div class="math-card">\[\text{HCF}(96,120)\]</div>
+<p>Prime factorisation:</p>
+<div class="math-card">\[96 = 2^5 \times 3\]</div>
+<div class="math-card">\[120 = 2^3 \times 3 \times 5\]</div>
+<p>Common lowest powers:</p>
+<div class="math-card">\[2^3 \times 3 = 8 \times 3 = 24\]</div>
+<p class="note conclusion">Therefore, maximum length of each piece is:</p>
+<div class="math-card">\[24 \text{ cm}\]</div>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="20-important-cbse-application-word-problems-on-lcm"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>20. Important CBSE Application: Word Problems on LCM</h1>
+<h2 id="problem">Problem</h2>
+<p>Two bells ring at intervals of 12 minutes and 18 minutes. If they ring together now, after how many minutes will they ring together again?</p>
+<h3>Solution</h3>
+<p>Together again means LCM.</p>
+<p>Find:</p>
+<div class="math-card">\[\text{LCM}(12,18)\]</div>
+<div class="math-card">\[12 = 2^2 \times 3\]</div>
+<div class="math-card">\[18 = 2 \times 3^2\]</div>
+<p>LCM:</p>
+<div class="math-card">\[2^2 \times 3^2 = 4 \times 9 = 36\]</div>
+<p class="note conclusion">Therefore, they will ring together again after:</p>
+<div class="math-card">\[36 \text{ minutes}\]</div>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="21-decimal-expansion-of-rational-numbers"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>21. Decimal Expansion of Rational Numbers</h1>
+<p>Let:</p>
+<div class="math-card">\[\frac{p}{q}\]</div>
+<p>be a rational number in lowest form, where \(q \neq 0\).</p>
+<p>The decimal expansion depends on the prime factors of \(q\).</p>
+<div class="soft-divider"></div>
+<h2 id="case-1-terminating-decimal">Case 1: Terminating Decimal</h2>
+<p>If \(q\) has only prime factors 2 and 5, then the decimal expansion terminates.</p>
+<p>That means:</p>
+<div class="math-card">\[q = 2^m5^n\]</div>
+<p class="note example">Example:</p>
+<div class="math-card">\[\frac{7}{40}\]</div>
+<p>Here:</p>
+<div class="math-card">\[40 = 2^3 \times 5\]</div>
+<p>Only 2 and 5 are present.</p>
+<p class="note conclusion">Therefore:</p>
+<div class="math-card">\[\frac{7}{40}\]</div>
+<p>has terminating decimal expansion.</p>
+<div class="math-card">\[\frac{7}{40}=0.175\]</div>
+<div class="soft-divider"></div>
+<h2 id="case-2-non-terminating-recurring-decimal">Case 2: Non-Terminating Recurring Decimal</h2>
+<p>If \(q\) has any prime factor other than 2 and 5, then the decimal expansion is non-terminating recurring.</p>
+<p class="note example">Example:</p>
+<div class="math-card">\[\frac{5}{12}\]</div>
+<p>Here:</p>
+<div class="math-card">\[12 = 2^2 \times 3\]</div>
+<p>Since 3 is present, decimal expansion is non-terminating recurring.</p>
+<div class="math-card">\[\frac{5}{12}=0.41666\dots\]</div>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="22-decimal-expansion-practice"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>22. Decimal Expansion Practice</h1>
+<h2 id="example-1">Example 1</h2>
+<p>Check whether:</p>
+<div class="math-card">\[\frac{13}{125}\]</div>
+<p>has terminating decimal expansion.</p>
+<div class="math-card">\[125 = 5^3\]</div>
+<p>Only prime factor is 5.</p>
+<p class="note conclusion">Therefore, it is terminating.</p>
+<div class="soft-divider"></div>
+<h2 id="example-2">Example 2</h2>
+<p>Check whether:</p>
+<div class="math-card">\[\frac{17}{90}\]</div>
+<p>has terminating decimal expansion.</p>
+<div class="math-card">\[90 = 2 \times 3^2 \times 5\]</div>
+<p>Since denominator has prime factor 3, decimal expansion is non-terminating recurring.</p>
+<div class="soft-divider"></div>
+<h2 id="example-3">Example 3</h2>
+<p>Check whether:</p>
+<div class="math-card">\[\frac{29}{160}\]</div>
+<p>has terminating decimal expansion.</p>
+<div class="math-card">\[160 = 2^5 \times 5\]</div>
+<p>Only 2 and 5 are present.</p>
+<p class="note conclusion">Therefore, decimal expansion is terminating.</p>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="23-proof-of-irrationality"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>23. Proof of Irrationality</h1>
+<p>Class 10 CBSE frequently asks proof-based questions like:</p>
+<div class="math-card">\[\sqrt{2}, \sqrt{3}, \sqrt{5}\]</div>
+<p>are irrational.</p>
+<div class="soft-divider"></div>
+<h2 id="important-lemma">Important Lemma</h2>
+<p>If \(p\) is a prime number and:</p>
+<div class="math-card">\[p \mid a^2\]</div>
+<p>then:</p>
+<div class="math-card">\[p \mid a\]</div>
+<p class="note example">Example:</p>
+<p>If:</p>
+<div class="math-card">\[2 \mid a^2\]</div>
+<p>then:</p>
+<div class="math-card">\[2 \mid a\]</div>
+<p>This result is very important in irrationality proofs.</p>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="24-prove-that-sqrt-2-is-irrational"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>24. Prove That \(\sqrt{2}\) Is Irrational</h1>
+<p>Assume that \(\sqrt{2}\) is rational.</p>
+<p>Then:</p>
+<div class="math-card">\[\sqrt{2} = \frac{p}{q}\]</div>
+<p>where \(p\) and \(q\) are coprime integers and \(q \neq 0\).</p>
+<p>Squaring both sides:</p>
+<div class="math-card">\[2 = \frac{p^2}{q^2}\]</div>
+<div class="math-card">\[p^2 = 2q^2\]</div>
+<p>So:</p>
+<div class="math-card">\[2 \mid p^2\]</div>
+<p class="note conclusion">Therefore:</p>
+<div class="math-card">\[2 \mid p\]</div>
+<p>Let:</p>
+<div class="math-card">\[p = 2k\]</div>
+<p>Now:</p>
+<div class="math-card">\[p^2 = 4k^2\]</div>
+<p>Substitute:</p>
+<div class="math-card">\[4k^2 = 2q^2\]</div>
+<div class="math-card">\[q^2 = 2k^2\]</div>
+<p>So:</p>
+<div class="math-card">\[2 \mid q^2\]</div>
+<p class="note conclusion">Therefore:</p>
+<div class="math-card">\[2 \mid q\]</div>
+<p>So both \(p\) and \(q\) are divisible by 2.</p>
+<p>This contradicts the fact that \(p\) and \(q\) are coprime.</p>
+<p class="note conclusion">Therefore:</p>
+<div class="math-card">\[\sqrt{2}\]</div>
+<p>is irrational.</p>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="25-prove-that-sqrt-3-is-irrational"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>25. Prove That \(\sqrt{3}\) Is Irrational</h1>
+<p>Assume that \(\sqrt{3}\) is rational.</p>
+<p>Then:</p>
+<div class="math-card">\[\sqrt{3} = \frac{p}{q}\]</div>
+<p>where \(p\) and \(q\) are coprime integers and \(q \neq 0\).</p>
+<p>Squaring:</p>
+<div class="math-card">\[3 = \frac{p^2}{q^2}\]</div>
+<div class="math-card">\[p^2 = 3q^2\]</div>
+<p>So:</p>
+<div class="math-card">\[3 \mid p^2\]</div>
+<p class="note conclusion">Therefore:</p>
+<div class="math-card">\[3 \mid p\]</div>
+<p>Let:</p>
+<div class="math-card">\[p = 3k\]</div>
+<p>Then:</p>
+<div class="math-card">\[p^2 = 9k^2\]</div>
+<p>Substitute:</p>
+<div class="math-card">\[9k^2 = 3q^2\]</div>
+<div class="math-card">\[q^2 = 3k^2\]</div>
+<p>So:</p>
+<div class="math-card">\[3 \mid q^2\]</div>
+<p class="note conclusion">Therefore:</p>
+<div class="math-card">\[3 \mid q\]</div>
+<p>So both \(p\) and \(q\) are divisible by 3.</p>
+<p>This contradicts the assumption that \(p\) and \(q\) are coprime.</p>
+<p class="note conclusion">Therefore:</p>
+<div class="math-card">\[\sqrt{3}\]</div>
+<p>is irrational.</p>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="26-prove-that-5-sqrt-2-is-irrational"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>26. Prove That \(5+\sqrt{2}\) Is Irrational</h1>
+<p>Assume:</p>
+<div class="math-card">\[5+\sqrt{2}\]</div>
+<p>is rational.</p>
+<p>Let:</p>
+<div class="math-card">\[5+\sqrt{2}=r\]</div>
+<p>where \(r\) is rational.</p>
+<p>Then:</p>
+<div class="math-card">\[\sqrt{2}=r-5\]</div>
+<p>Since \(r\) is rational and 5 is rational:</p>
+<div class="math-card">\[r-5\]</div>
+<p>is rational.</p>
+<p>So:</p>
+<div class="math-card">\[\sqrt{2}\]</div>
+<p>is rational.</p>
+<p>But this is false because \(\sqrt{2}\) is irrational.</p>
+<p class="note conclusion">Therefore:</p>
+<div class="math-card">\[5+\sqrt{2}\]</div>
+<p>is irrational.</p>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="27-prove-that-3-sqrt-2-is-irrational"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>27. Prove That \(3\sqrt{2}\) Is Irrational</h1>
+<p>Assume:</p>
+<div class="math-card">\[3\sqrt{2}\]</div>
+<p>is rational.</p>
+<p>Let:</p>
+<div class="math-card">\[3\sqrt{2}=r\]</div>
+<p>where \(r\) is rational.</p>
+<p>Then:</p>
+<div class="math-card">\[\sqrt{2} = \frac{r}{3}\]</div>
+<p>Since \(r\) is rational and 3 is rational:</p>
+<div class="math-card">\[\frac{r}{3}\]</div>
+<p>is rational.</p>
+<p>So:</p>
+<div class="math-card">\[\sqrt{2}\]</div>
+<p>is rational.</p>
+<p>But \(\sqrt{2}\) is irrational.</p>
+<p>This is a contradiction.</p>
+<p class="note conclusion">Therefore:</p>
+<div class="math-card">\[3\sqrt{2}\]</div>
+<p>is irrational.</p>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="28-algebraic-divisibility-for-topper-students"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>28. Algebraic Divisibility for Topper Students</h1>
+<h2 id="result-1">Result 1</h2>
+<div class="math-card">\[a-b \mid a^2-b^2\]</div>
+<p>because:</p>
+<div class="math-card">\[a^2-b^2 = (a-b)(a+b)\]</div>
+<div class="soft-divider"></div>
+<h2 id="result-2">Result 2</h2>
+<div class="math-card">\[a-b \mid a^3-b^3\]</div>
+<p>because:</p>
+<div class="math-card">\[a^3-b^3 = (a-b)(a^2+ab+b^2)\]</div>
+<div class="soft-divider"></div>
+<h2 id="result-3">Result 3</h2>
+<div class="math-card">\[a+b \mid a^3+b^3\]</div>
+<p>because:</p>
+<div class="math-card">\[a^3+b^3 = (a+b)(a^2-ab+b^2)\]</div>
+<div class="soft-divider"></div>
+<h2 id="result-4">Result 4</h2>
+<div class="math-card">\[a-b \mid a^n-b^n\]</div>
+<p>for every positive integer \(n\).</p>
+<div class="soft-divider"></div>
+<h2 id="result-5">Result 5</h2>
+<div class="math-card">\[a+b \mid a^n+b^n\]</div>
+<p>when \(n\) is odd.</p>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="29-topper-proof-n-2-n-is-divisible-by-2"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>29. Topper Proof: \(n^2-n\) Is Divisible by 2</h1>
+<p>Prove:</p>
+<div class="math-card">\[n^2-n\]</div>
+<p>is divisible by 2 for every integer \(n\).</p>
+<p class="note example">Solution:</p>
+<div class="math-card">\[n^2-n = n(n-1)\]</div>
+<p>Here \(n-1\) and \(n\) are consecutive integers.</p>
+<p>Among two consecutive integers, one is even.</p>
+<p class="note conclusion">Therefore:</p>
+<div class="math-card">\[2 \mid n(n-1)\]</div>
+<p class="note conclusion">Hence:</p>
+<div class="math-card">\[2 \mid n^2-n\]</div>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="30-topper-proof-n-3-n-is-divisible-by-6"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>30. Topper Proof: \(n^3-n\) Is Divisible by 6</h1>
+<p>Prove:</p>
+<div class="math-card">\[n^3-n\]</div>
+<p>is divisible by 6 for every integer \(n\).</p>
+<p class="note example">Solution:</p>
+<div class="math-card">\[n^3-n = n(n^2-1)\]</div>
+<div class="math-card">\[n^3-n = n(n-1)(n+1)\]</div>
+<p>These are three consecutive integers:</p>
+<div class="math-card">\[n-1,\ n,\ n+1\]</div>
+<p>Among three consecutive integers:</p>
+<ul class="clean-list">
+<li>one is divisible by 2</li>
+<li>one is divisible by 3</li>
+</ul>
+<p class="note conclusion">Therefore, the product is divisible by:</p>
+<div class="math-card">\[2 \times 3 = 6\]</div>
+<p class="note conclusion">Hence:</p>
+<div class="math-card">\[6 \mid n^3-n\]</div>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="31-topper-proof-n-5-n-is-divisible-by-30"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>31. Topper Proof: \(n^5-n\) Is Divisible by 30</h1>
+<p>Prove:</p>
+<div class="math-card">\[30 \mid n^5-n\]</div>
+<p>for every integer \(n\).</p>
+<p>Since:</p>
+<div class="math-card">\[30 = 2 \times 3 \times 5\]</div>
+<p>we prove divisibility by 2, 3, and 5.</p>
+<div class="soft-divider"></div>
+<h2 id="divisibility-by-2">Divisibility by 2</h2>
+<p>If \(n\) is even, then \(n^5-n\) is even.</p>
+<p>If \(n\) is odd, then \(n^5\) is odd.</p>
+<p>So:</p>
+<div class="math-card">\[n^5-n = \text{odd} - \text{odd} = \text{even}\]</div>
+<p class="note conclusion">Therefore:</p>
+<div class="math-card">\[2 \mid n^5-n\]</div>
+<div class="soft-divider"></div>
+<h2 id="divisibility-by-3">Divisibility by 3</h2>
+<p>Every integer leaves remainder 0, 1, or 2 when divided by 3.</p>
+<p>If:</p>
+<div class="math-card">\[n \equiv 0 \pmod 3\]</div>
+<p>then:</p>
+<div class="math-card">\[n^5-n \equiv 0^5-0 \equiv 0 \pmod 3\]</div>
+<p>If:</p>
+<div class="math-card">\[n \equiv 1 \pmod 3\]</div>
+<p>then:</p>
+<div class="math-card">\[n^5-n \equiv 1^5-1 \equiv 0 \pmod 3\]</div>
+<p>If:</p>
+<div class="math-card">\[n \equiv 2 \pmod 3\]</div>
+<p>then:</p>
+<div class="math-card">\[n^5-n \equiv 2^5-2 = 32-2=30\]</div>
+<div class="math-card">\[30 \equiv 0 \pmod 3\]</div>
+<p>So:</p>
+<div class="math-card">\[3 \mid n^5-n\]</div>
+<div class="soft-divider"></div>
+<h2 id="divisibility-by-5">Divisibility by 5</h2>
+<p>Every integer leaves remainder 0, 1, 2, 3, or 4 when divided by 5.</p>
+<p>Check:</p>
+<div class="math-card">\[0^5-0=0\]</div>
+<div class="math-card">\[1^5-1=0\]</div>
+<div class="math-card">\[2^5-2=32-2=30\]</div>
+<div class="math-card">\[3^5-3=243-3=240\]</div>
+<div class="math-card">\[4^5-4=1024-4=1020\]</div>
+<p>Each is divisible by 5.</p>
+<p>So:</p>
+<div class="math-card">\[5 \mid n^5-n\]</div>
+<p>Since 2, 3, and 5 are pairwise coprime:</p>
+<div class="math-card">\[30 \mid n^5-n\]</div>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="32-modular-arithmetic-for-cbse-topper-level"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>32. Modular Arithmetic for CBSE Topper Level</h1>
+<p>Modular arithmetic means working with remainders.</p>
+<div class="math-card">\[a \equiv b \pmod m\]</div>
+<p>means:</p>
+<div class="math-card">\[m \mid (a-b)\]</div>
+<p class="note example">Example:</p>
+<div class="math-card">\[17 \equiv 2 \pmod 5\]</div>
+<p>because:</p>
+<div class="math-card">\[17-2=15\]</div>
+<p>and:</p>
+<div class="math-card">\[5 \mid 15\]</div>
+<div class="soft-divider"></div>
+<h2 id="divisibility-in-modular-form">Divisibility in Modular Form</h2>
+<div class="math-card">\[a \mid b\]</div>
+<p>means:</p>
+<div class="math-card">\[b \equiv 0 \pmod a\]</div>
+<p class="note example">Example:</p>
+<div class="math-card">\[7 \mid 56\]</div>
+<p>means:</p>
+<div class="math-card">\[56 \equiv 0 \pmod 7\]</div>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="33-remainder-example-for-toppers"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>33. Remainder Example for Toppers</h1>
+<p>Find the remainder when:</p>
+<div class="math-card">\[3^{100}\]</div>
+<p>is divided by 8.</p>
+<p>We know:</p>
+<div class="math-card">\[3^2 = 9\]</div>
+<div class="math-card">\[9 \equiv 1 \pmod 8\]</div>
+<p>Now:</p>
+<div class="math-card">\[3^{100} = (3^2)^{50}\]</div>
+<div class="math-card">\[3^{100} \equiv 1^{50} \pmod 8\]</div>
+<div class="math-card">\[3^{100} \equiv 1 \pmod 8\]</div>
+<p class="note conclusion">Therefore, the remainder is:</p>
+<div class="math-card">\[1\]</div>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="34-another-remainder-example"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>34. Another Remainder Example</h1>
+<p>Find the remainder when:</p>
+<div class="math-card">\[2^{50}\]</div>
+<p>is divided by 7.</p>
+<p>Observe powers of 2 modulo 7:</p>
+<div class="math-card">\[2^1 = 2\]</div>
+<div class="math-card">\[2^2 = 4\]</div>
+<div class="math-card">\[2^3 = 8 \equiv 1 \pmod 7\]</div>
+<p>So the cycle length is 3.</p>
+<p>Now:</p>
+<div class="math-card">\[50 = 3 \times 16 + 2\]</div>
+<p class="note conclusion">Therefore:</p>
+<div class="math-card">\[2^{50} = (2^3)^{16} \times 2^2\]</div>
+<div class="math-card">\[2^{50} \equiv 1^{16} \times 4 \pmod 7\]</div>
+<div class="math-card">\[2^{50} \equiv 4 \pmod 7\]</div>
+<p>So the remainder is:</p>
+<div class="math-card">\[4\]</div>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="35-cbse-exam-strategy-how-average-students-become-toppers"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>35. CBSE Exam Strategy: How Average Students Become Toppers</h1>
+<h2 id="step-1-master-definitions">Step 1: Master Definitions</h2>
+<p>Learn clearly:</p>
+<div class="math-card">\[a \mid b \iff b = ak,\quad k \in \mathbb{Z}\]</div>
+<div class="math-card">\[a = bq + r,\quad 0 \leq r &lt; b\]</div>
+<div class="math-card">\[\text{HCF} \times \text{LCM} = \text{Product of two numbers}\]</div>
+<div class="soft-divider"></div>
+<h2 id="step-2-master-euclid-s-algorithm">Step 2: Master Euclid’s Algorithm</h2>
+<p>Practice at least 20 examples.</p>
+<p>Important style:</p>
+<div class="math-card">\[a = bq + r\]</div>
+<p>Continue until remainder becomes 0.</p>
+<p>Final non-zero divisor is HCF.</p>
+<div class="soft-divider"></div>
+<h2 id="step-3-master-prime-factorisation">Step 3: Master Prime Factorisation</h2>
+<p>Practice:</p>
+<ul class="clean-list">
+<li>finding prime factors</li>
+<li>HCF using lowest powers</li>
+<li>LCM using highest powers</li>
+<li>decimal expansion using denominator factors</li>
+</ul>
+<div class="soft-divider"></div>
+<h2 id="step-4-master-proof-writing">Step 4: Master Proof Writing</h2>
+<p>CBSE toppers write proof in clean steps:</p>
+<ol class="clean-list numbered">
+<li>Assume the opposite</li>
+<li>Write in fraction form</li>
+<li>Use squaring</li>
+<li>Use prime divisibility</li>
+<li>Show contradiction</li>
+<li>Conclude irrationality</li>
+</ol>
+<div class="soft-divider"></div>
+<h2 id="step-5-master-word-problems">Step 5: Master Word Problems</h2>
+<p>HCF means:</p>
+<ul class="clean-list">
+<li>maximum size</li>
+<li>largest length</li>
+<li>greatest number of equal groups</li>
+</ul>
+<p>LCM means:</p>
+<ul class="clean-list">
+<li>together again</li>
+<li>minimum time</li>
+<li>repeated events</li>
+<li>smallest common number</li>
+</ul>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="36-common-mistakes-to-avoid"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>36. Common Mistakes to Avoid</h1>
+<div class="table-wrap"><table>
+<thead><tr>
+<th>Mistake</th>
+<th>Correction</th>
+</tr></thead><tbody>
+<tr>
+<td>Thinking \(a \mid b\) means \(b \mid a\)</td>
+<td>Not always true</td>
+</tr>
+<tr>
+<td>Saying 0 divides every number</td>
+<td>Wrong</td>
+</tr>
+<tr>
+<td>Forgetting denominator must be in lowest form for decimal expansion</td>
+<td>Always reduce first</td>
+</tr>
+<tr>
+<td>Confusing HCF and LCM in word problems</td>
+<td>Maximum equal division = HCF; together again = LCM</td>
+</tr>
+<tr>
+<td>Writing incomplete irrationality proof</td>
+<td>Show contradiction clearly</td>
+</tr>
+<tr>
+<td>Not using prime powers correctly</td>
+<td>HCF = minimum powers, LCM = maximum powers</td>
+</tr>
+</tbody></table></div>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="37-full-practice-set-for-class-10-cbse"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>37. Full Practice Set for Class 10 CBSE</h1>
+<h2 id="a-basic-divisibility">A. Basic Divisibility</h2>
+<ol class="clean-list numbered">
+<li>Check whether \(7 \mid 84\).</li>
+<li>Check whether \(9 \mid 108\).</li>
+<li>Check whether \(11 \mid 121\).</li>
+<li>Check whether \(13 \mid 169\).</li>
+<li>Check whether \(15 \mid 230\).</li>
+</ol>
+<div class="soft-divider"></div>
+<h2 id="b-euclid-s-algorithm">B. Euclid’s Algorithm</h2>
+<p>Find HCF using Euclid’s Algorithm:</p>
+<ol class="clean-list numbered">
+<li>135 and 225</li>
+<li>252 and 198</li>
+<li>867 and 255</li>
+<li>4052 and 12576</li>
+<li>155 and 1385</li>
+</ol>
+<div class="soft-divider"></div>
+<h2 id="c-prime-factorisation">C. Prime Factorisation</h2>
+<p>Find HCF and LCM:</p>
+<ol class="clean-list numbered">
+<li>72 and 120</li>
+<li>144 and 360</li>
+<li>96 and 240</li>
+<li>225 and 375</li>
+<li>420 and 630</li>
+</ol>
+<div class="soft-divider"></div>
+<h2 id="d-decimal-expansion">D. Decimal Expansion</h2>
+<p>Check whether the following have terminating or non-terminating recurring decimal expansion:</p>
+<ol class="clean-list numbered">
+<li>\(\frac{7}{40}\)</li>
+<li>\(\frac{13}{125}\)</li>
+<li>\(\frac{17}{90}\)</li>
+<li>\(\frac{29}{160}\)</li>
+<li>\(\frac{23}{210}\)</li>
+</ol>
+<div class="soft-divider"></div>
+<h2 id="e-irrationality-proofs">E. Irrationality Proofs</h2>
+<p>Prove that:</p>
+<ol class="clean-list numbered">
+<li>\(\sqrt{2}\) is irrational.</li>
+<li>\(\sqrt{3}\) is irrational.</li>
+<li>\(\sqrt{5}\) is irrational.</li>
+<li>\(2+\sqrt{3}\) is irrational.</li>
+<li>\(5\sqrt{2}\) is irrational.</li>
+</ol>
+<div class="soft-divider"></div>
+<h2 id="f-topper-level-divisibility-proofs">F. Topper-Level Divisibility Proofs</h2>
+<p>Prove that:</p>
+<ol class="clean-list numbered">
+<li>\(n^2-n\) is divisible by 2.</li>
+<li>\(n^2+n\) is divisible by 2.</li>
+<li>\(n^3-n\) is divisible by 6.</li>
+<li>\(n^5-n\) is divisible by 30.</li>
+<li>\(a-b\) divides \(a^3-b^3\).</li>
+</ol>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="38-short-answer-key"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>38. Short Answer Key</h1>
+<h2 id="a-basic-divisibility">A. Basic Divisibility</h2>
+<ol class="clean-list numbered">
+<li>True</li>
+<li>True</li>
+<li>True</li>
+<li>True</li>
+<li>False</li>
+</ol>
+<div class="soft-divider"></div>
+<h2 id="b-euclid-s-algorithm">B. Euclid’s Algorithm</h2>
+<ol class="clean-list numbered">
+<li>HCF = 45</li>
+<li>HCF = 18</li>
+<li>HCF = 51</li>
+<li>HCF = 4</li>
+<li>HCF = 155</li>
+</ol>
+<div class="soft-divider"></div>
+<h2 id="c-hcf-and-lcm">C. HCF and LCM</h2>
+<ol class="clean-list numbered">
+<li>HCF = 24, LCM = 360</li>
+<li>HCF = 72, LCM = 720</li>
+<li>HCF = 48, LCM = 480</li>
+<li>HCF = 75, LCM = 1125</li>
+<li>HCF = 210, LCM = 1260</li>
+</ol>
+<div class="soft-divider"></div>
+<h2 id="d-decimal-expansion">D. Decimal Expansion</h2>
+<ol class="clean-list numbered">
+<li>Terminating</li>
+<li>Terminating</li>
+<li>Non-terminating recurring</li>
+<li>Terminating</li>
+<li>Non-terminating recurring</li>
+</ol>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="39-final-topper-formula-sheet"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>39. Final Topper Formula Sheet</h1>
+<div class="math-card">\[a \mid b \iff b = ak,\quad k \in \mathbb{Z}\]</div>
+<div class="math-card">\[a = bq + r,\quad 0 \leq r &lt; b\]</div>
+<div class="math-card">\[\gcd(a,b)=\gcd(b,r)\]</div>
+<div class="math-card">\[\text{HCF} \times \text{LCM} = a \times b\]</div>
+<div class="math-card">\[q = 2^m5^n \Rightarrow \text{terminating decimal}\]</div>
+<div class="math-card">\[q \neq 2^m5^n \Rightarrow \text{non-terminating recurring decimal}\]</div>
+<div class="math-card">\[a-b \mid a^n-b^n\]</div>
+<div class="math-card">\[a+b \mid a^n+b^n \quad \text{if } n \text{ is odd}\]</div>
+<div class="math-card">\[n^3-n = n(n-1)(n+1)\]</div>
+<div class="math-card">\[6 \mid n^3-n\]</div>
+<div class="math-card">\[30 \mid n^5-n\]</div>
+<div class="soft-divider"></div>
+</section>
+<section class="lesson-card" id="40-final-learning-path"><div class="section-kicker">CBSE Class 10 • Real Numbers</div><h1>40. Final Learning Path</h1>
+<p>For an average student to become a topper:</p>
+<h2 id="first-level">First Level</h2>
+<p>Understand:</p>
+<div class="math-card">\[a \mid b\]</div>
+<p>as exact division.</p>
+<h2 id="second-level">Second Level</h2>
+<p>Master:</p>
+<div class="math-card">\[a = bq+r\]</div>
+<p>and Euclid’s Algorithm.</p>
+<h2 id="third-level">Third Level</h2>
+<p>Master prime factorisation, HCF, LCM, and decimal expansion.</p>
+<h2 id="fourth-level">Fourth Level</h2>
+<p>Master proof of irrationality.</p>
+<h2 id="fifth-level">Fifth Level</h2>
+<p>Master topper-level divisibility proofs like:</p>
+<div class="math-card">\[n^3-n \text{ divisible by } 6\]</div>
+<p>and:</p>
+<div class="math-card">\[n^5-n \text{ divisible by } 30\]</div>
+<p>This complete path converts <strong>basic understanding into CBSE topper-level confidence</strong>.</p>
+</section>
+</main></div></div>
+
+
+
+<footer class="footer">Class 10 CBSE Real Numbers • Divisibility • Printable Study Page</footer>
+</div>
+<a class="top-link" href="#top">↑ Top</a>
+
+<script>
+(function(){
+  const links = Array.from(document.querySelectorAll('.nav-list a'));
+  const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const clear = () => links.forEach(a => a.classList.remove('active-topic'));
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        clear();
+        const a = document.querySelector('.nav-list a[href="#'+entry.target.id+'"]');
+        if(a){ a.classList.add('active-topic'); }
+      }
+    });
+  }, {rootMargin:'-20% 0px -70% 0px', threshold:0.01});
+  sections.forEach(s => obs.observe(s));
+})();
+</script>
+<style>
+.nav-list a.active-topic{background:#dbeafe!important;color:#0f2f70!important;border-color:#60a5fa!important;box-shadow:inset 4px 0 0 #2563eb;}
+</style>
+
+</body>
+</html>
